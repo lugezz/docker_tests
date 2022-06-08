@@ -1,0 +1,9 @@
+version: "3.7"  # optional since v1.27.0
+services:
+  product-services:
+    build: ./product
+    volumes:
+      - ./product:/app
+    
+    ports:
+      - 5001:80

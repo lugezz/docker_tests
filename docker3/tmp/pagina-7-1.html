@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <meta property="og:title" content="Artera - Project Coordinator" />
+    <meta property="og:description" content="Artera">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/images/as-social-share.png" />
+    <meta property="og:image:height" content="627" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:site_name" content="Artera - Project Coordinator">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Project Coordinator - Artera</title>
+    <style type="text/css">
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        html {
+            font-family: sans-serif;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+        body, html {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 13px;
+            line-height: 1.42857143;
+            color: #333333;
+            background-color: #f6f6f6 !important;
+            padding-top: 2px;
+            padding-bottom: 4px;
+            margin: 0;
+        }
+        body {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        a img {
+            border:none;
+        }
+        #outside {
+            text-align:left;
+            position:relative;
+            margin:16px auto;
+            max-width:900px;
+        }
+        #header {
+            font-size: 36px;
+        }
+        #header a {
+            color: black;
+            text-decoration: none;
+        }
+        #contentouter {
+            padding: 16px;
+            border-left: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #999;
+            border-right: 1px solid #999;
+            background-color: white;
+        }
+        #content {
+            clear: both;
+            /*			padding-top: 10px;*/
+            /*			font-size: 13px;*/
+            /*			line-height: 16px;*/
+        }
+        #inner_footer {
+            text-align:center;
+            color: #444;
+            padding-top: 15px;
+            padding-bottom: 10px;
+            font-size: 10px;
+        }
+        #inner_footer a{
+            color: #444;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            body, html {
+                padding: 0 !important;
+                background-color: #fff !important;
+            }
+            #outside {
+                margin:0 !important;
+                width: auto !important;
+            }
+            #contentouter {
+                border: 0;
+            }
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/ui-lightness/jquery-ui.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>	
+	<script src="/links/bootstrap/all/js/bootstrap.js"></script>	
+	<link rel="stylesheet" href="/links/bootstrap/all/css/bootstrap.css" />
+	<link rel="stylesheet" href="/links/bootstrap/all/css/bootstrap-theme.css" />
+	<link type="text/css" rel="stylesheet" href="/links/content8.css?links_version=20220127" />
+
+	<script type="text/javascript" src="/links/content.js?links_version=20220127"></script>
+	<script type="text/javascript" src="/links/jquery.multifile.js?links_version=20220127"></script>		
+	<script type="text/javascript" src="/links/chosen/chosen.jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/links/chosen/chosen.css" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="/links/portal-star-ratings.js?links_version=20220127"></script>
+	<style type="text/css" media="print">
+		#contentouter {border:0;}
+		#outside {border:0;}
+		body {background-color:white;}		
+	</style>
+<link href="/links/openings.css" rel="stylesheet" type="text/css" /><script src="/links/openings.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="outside">
+    <div id="contentouter">
+        <div id="header">
+            <a href="https://artera.com/"><img id="logo" src="/userdata/artera/jobboard_Artera_Logo_+_Tagline_-_Primary_Full_Color.png" alt="Artera" style="max-width:100%"></a>
+        </div>
+        <div id="content">
+            <div id="ascontainer">
+                <div id="asbreadcrumbs"></div>
+                <div id="ascontent"><script>
+	// Load jQuery if not defined or less than version 1.9.1 (required by bootstrap)
+	var jquery_is_loaded = true;
+	if (typeof jQuery === 'undefined') {
+		jquery_is_loaded = false;
+	}
+	else{
+		var jquery_version = jQuery.fn.jquery.split(' ')[0].split('.');
+		if ((jquery_version[0] < 2 && jquery_version[1] < 9) || (jquery_version[0] == 1 && jquery_version[1] == 9 && jquery_version[2] < 1)) {
+			jquery_is_loaded = false;
+		}
+	}
+	if(!jquery_is_loaded){
+		load_script('https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js');
+	}
+	
+	// Load bootstrap if not loaded
+	if (typeof $.fn.popover != 'function'){
+		load_script('/links/bootstrap/all/js/bootstrap.js');
+		load_link('/links/bootstrap/all/css/bootstrap.css');
+		load_link('/links/bootstrap/all/css/bootstrap-theme.css');
+	}
+	
+	function load_script(src){
+		var h = document.getElementsByTagName('head')[0];
+		var e = document.createElement('script');
+		e.src = src;
+		h.appendChild(e);
+	}
+	function load_link(href){
+		var h = document.getElementsByTagName('head')[0];
+		var e = document.createElement('link');
+		e.rel = 'stylesheet';
+		e.type = 'text/css';
+		e.href = href;
+		h.appendChild(e);
+	}
+</script><script type="application/ld+json">
+{"@context":"http:\/\/schema.org\/","@type":"JobPosting","datePosted":"2022-02-28T08:41:17-05:00","description":"<p style=\"margin-top:1.55pt;margin-right:0in;margin-bottom:4pt;margin-left:0in;text-align:justify;\"><span style=\"line-height:107%;\"><b><span style=\"line-height:107%;\"><span>Position Overview:<\/span><\/span><\/b><\/span><\/p>\n\n<p style=\"margin-top:6pt;margin-right:0in;margin-bottom:4pt;margin-left:0in;text-align:justify;\"><span style=\"line-height:107%;\"><span style=\"line-height:107%;\"><span>The Project Coordinator will be responsible for all administrative support for entire business unit.&nbsp; The candidate will be required to coordinate project-related compliance and reporting activities, such as identifying opportunities, preparing proposals, compiling field data collection in reports to customers, tracking and managing ongoing business performance metrics, maintaining and adjusting project schedules, coordinating team members and equipment, analyzing the weekly revenue and cost data, and change management.&nbsp; This role will also interface and need to build solid relationships with select customers, subcontractors, and vendors<\/span><\/span><\/span><\/p>\n\n<p style=\"margin-top:6pt;margin-right:0in;margin-bottom:4pt;margin-left:0in;text-align:justify;\"><span style=\"line-height:107%;\"><b><span style=\"line-height:107%;\"><span>Essential Functions:<\/span><\/span><\/b><\/span><\/p>\n\n<ul>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Prepare, maintain, and manage resource and cost loaded schedules in MS Project, Salesforce, and others as required<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Assist in Managing customer systems<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Assist with new customer account contractor requirements <\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Review field daily work reports and track performed quantities<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Review weekly margin reports for cost and revenue performance<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Collect data and produce analysis of revenue, cost, manpower and labor hours<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Analyze project scope adherence during execution and determine variances and impact<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Facilitate change order submittals per contract requirements<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Manage the change order process and status<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Assist in managing vendors, project material and material inventory as needed<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Assist with execution and compliance with prime contractor contracts<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Track and review invoices<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Review and manage project costs for accuracy, ensure cost transfers and ensure corrections when needed<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Manage and maintain accurate project schedules, estimates for labor, materials, and other direct costs<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Accurately report project performance, revenue, cost, accruals, and forecasts, as required by company and customer<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Provide input on potential areas for improvement in process management and operational efficiencies whenever possible<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Travel when necessary to complete projects, with on-site presence throughout duration of projects<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Work closely with operations to ensure projects are completed within budget and on time<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Schedule appointments and maintain calendars<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Schedule and coordinate staff and other meetings<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Collect and distribute mail<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Assist in preparing communications, such as memos, emails, invoices, reports, and other correspondence<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Write and edit documents from letters to reports and instructional documents<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Create and maintain filing systems, both electronic and physical <\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Work with finance and accounting to perform bookkeeping<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Participate in project design meetings and propose to operations as needed<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Evaluate customer feedback and develop solutions of potential problems, roadblocks, and technical hitches<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Plan and manage team goals, project schedules and new information<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Works with operations leaders on projects and coordinate all team members to keep workflow on track<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Manage project-related paperwork by ensuring all necessary materials are current, properly filed and stored in an easily accessible location<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Direct project correspondences by preparing and reviewing project proposals, impact reports, memos, meeting minutes and emails<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Works with operations leaders and clients to identify and define project requirements, scope, and objectives<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Adhere to budget by monitoring expenses and implementing cost-saving measures<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Monitors Salesforce to identify and coordinate business opportunities<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Maintains all sustainability tracking<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Direct line of support to customers<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Follow up on customer leads<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Support organizing and executing industry event presence<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Order materials and equipment as operations leaders deem necessary<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Help identify valuable industry events<\/span><\/li>\n<\/ul>\n\n<div style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span style=\"line-height:107%;\"><b><span style=\"line-height:107%;\"><span>Qualifications:<\/span><\/span><\/b><\/span><\/div>\n\n<p style=\"margin-top:6pt;margin-right:0in;margin-bottom:4pt;margin-left:0in;text-align:justify;\"><span style=\"line-height:107%;\"><b><span style=\"line-height:107%;\"><span>Education and Experience:<\/span><\/span><\/b><\/span><\/p>\n\n<ul>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>High school diploma required, Business degree or equivalent preferred<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>2+ years of Business or Project Management related experience<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Experience in the Oil and Natural Gas Industry<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Organizational skills, detail-oriented, problem-solving skills, work under strict deadlines and exhibit a team player attitude<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Knowledge of generally accepted accounting principles relating to payables and sales tax accounting<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Supervises staff and coordinates activities with other groups to ensure accurate and timely completion of activities and problem resolution<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Proficient in Microsoft Office, accounts payable and purchasing Intermediate Excel skill is desirable. Must be familiar with Pivot tables and V-Lookup<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Experience with accounts payable and purchasing<\/span><\/li>\n\t<li style=\"margin-top:2.4pt;margin-right:0in;margin-bottom:0.0001pt;text-align:justify;\"><span>Excellent interpersonal, oral, and written communication skills<\/span><\/li>\n<\/ul>\n\n<p style=\"margin-top:6pt;margin-right:0in;margin-bottom:4pt;margin-left:0in;text-align:justify;\"><span style=\"line-height:107%;\"><b><span>Other Duties:<\/span><\/b><\/span><\/p>\n\n<p style=\"margin-top:4pt;margin-right:0in;margin-bottom:4pt;margin-left:0in;text-align:justify;\"><span style=\"line-height:107%;\"><span style=\"line-height:107%;\"><span>Please note this job description is not designed to cover or contain a comprehensive listing of activities, duties, or responsibilities that are required of the employee for this job.&nbsp; Duties, responsibilities, and activities may change at any time with or without notice.<\/span><\/span><\/span><\/p>\n","hiringOrganization":{"@type":"Organization","name":"Artera","logo":"http:\/\/public.applicantstack.com"},"identifier":{"@type":"PropertyValue","name":"Artera","value":"a2shrbw0a454"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressCountry":"US","addressRegion":"GA","addressLocality":"Conyers"}},"title":"Project Coordinator"}
+</script><div id="asbreadcrumbs"><a href="https://artera.applicantstack.com/x/openings">Job Openings</a> &gt;&gt; Project Coordinator</div><div id="contenttitle" style="clear:both">Project Coordinator</div><div class="sectionhead">Summary</div><table class="formtable"><tr><th>Title:</th><td class="noinput">Project Coordinator</td></tr><tr><th>ID:</th><td class="noinput">1056</td></tr><tr><th>Location:</th><td class="noinput">Conyers, GA</td></tr><tr><th>Department:</th><td class="noinput">Administrative</td></tr></table><div class="toggle_detail"><a href="javascript:void(0)">More about this job ></a></div><div class="sectionhead description_head">Description</div><div class="listing_description"><p style="margin-top:1.55pt; margin-right:0in; margin-bottom:4.0pt; margin-left:0in; text-align:justify"><span style="line-height:107%"><b><span style="line-height:107%"><span style="font-family:&quot;Arial&quot;,sans-serif">Position Overview:</span></span></b></span></p>
+
+<p style="margin-top:6.0pt; margin-right:0in; margin-bottom:4.0pt; margin-left:0in; text-align:justify"><span style="line-height:107%"><span style="line-height:107%"><span style="font-family:&quot;Arial&quot;,sans-serif">The Project Coordinator will be responsible for all administrative support for entire business unit.&nbsp; The candidate will be required to coordinate project-related compliance and reporting activities, such as identifying opportunities, preparing proposals, compiling field data collection in reports to customers, tracking and managing ongoing business performance metrics, maintaining and adjusting project schedules, coordinating team members and equipment, analyzing the weekly revenue and cost data, and change management.&nbsp; This role will also interface and need to build solid relationships with select customers, subcontractors, and vendors</span></span></span></p>
+
+<p style="margin-top:6.0pt; margin-right:0in; margin-bottom:4.0pt; margin-left:0in; text-align:justify"><span style="line-height:107%"><b><span style="line-height:107%"><span style="font-family:&quot;Arial&quot;,sans-serif">Essential Functions:</span></span></b></span></p>
+
+<ul>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Prepare, maintain, and manage resource and cost loaded schedules in MS Project, Salesforce, and others as required</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Assist in Managing customer systems</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Assist with new customer account contractor requirements </span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Review field daily work reports and track performed quantities</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Review weekly margin reports for cost and revenue performance</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Collect data and produce analysis of revenue, cost, manpower and labor hours</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Analyze project scope adherence during execution and determine variances and impact</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Facilitate change order submittals per contract requirements</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Manage the change order process and status</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Assist in managing vendors, project material and material inventory as needed</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Assist with execution and compliance with prime contractor contracts</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Track and review invoices</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Review and manage project costs for accuracy, ensure cost transfers and ensure corrections when needed</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Manage and maintain accurate project schedules, estimates for labor, materials, and other direct costs</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Accurately report project performance, revenue, cost, accruals, and forecasts, as required by company and customer</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Provide input on potential areas for improvement in process management and operational efficiencies whenever possible</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Travel when necessary to complete projects, with on-site presence throughout duration of projects</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Work closely with operations to ensure projects are completed within budget and on time</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Schedule appointments and maintain calendars</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Schedule and coordinate staff and other meetings</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Collect and distribute mail</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Assist in preparing communications, such as memos, emails, invoices, reports, and other correspondence</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Write and edit documents from letters to reports and instructional documents</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Create and maintain filing systems, both electronic and physical </span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Work with finance and accounting to perform bookkeeping</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Participate in project design meetings and propose to operations as needed</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Evaluate customer feedback and develop solutions of potential problems, roadblocks, and technical hitches</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Plan and manage team goals, project schedules and new information</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Works with operations leaders on projects and coordinate all team members to keep workflow on track</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Manage project-related paperwork by ensuring all necessary materials are current, properly filed and stored in an easily accessible location</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Direct project correspondences by preparing and reviewing project proposals, impact reports, memos, meeting minutes and emails</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Works with operations leaders and clients to identify and define project requirements, scope, and objectives</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Adhere to budget by monitoring expenses and implementing cost-saving measures</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Monitors Salesforce to identify and coordinate business opportunities</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Maintains all sustainability tracking</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Direct line of support to customers</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Follow up on customer leads</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Support organizing and executing industry event presence</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Order materials and equipment as operations leaders deem necessary</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Help identify valuable industry events</span></li>
+</ul>
+
+<div style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="line-height:107%"><b><span style="line-height:107%"><span style="font-family:&quot;Arial&quot;,sans-serif">Qualifications:</span></span></b></span></div>
+
+<p style="margin-top:6.0pt; margin-right:0in; margin-bottom:4.0pt; margin-left:0in; text-align:justify"><span style="line-height:107%"><b><span style="line-height:107%"><span style="font-family:&quot;Arial&quot;,sans-serif">Education and Experience:</span></span></b></span></p>
+
+<ul>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">High school diploma required, Business degree or equivalent preferred</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">2+ years of Business or Project Management related experience</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Experience in the Oil and Natural Gas Industry</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Organizational skills, detail-oriented, problem-solving skills, work under strict deadlines and exhibit a team player attitude</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Knowledge of generally accepted accounting principles relating to payables and sales tax accounting</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Supervises staff and coordinates activities with other groups to ensure accurate and timely completion of activities and problem resolution</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Proficient in Microsoft Office, accounts payable and purchasing Intermediate Excel skill is desirable. Must be familiar with Pivot tables and V-Lookup</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Experience with accounts payable and purchasing</span></li>
+	<li style="margin-top:2.4pt; margin-right:0in; margin-bottom:.0001pt; text-align:justify"><span style="font-family:&quot;Arial&quot;,sans-serif">Excellent interpersonal, oral, and written communication skills</span></li>
+</ul>
+
+<p style="margin-top:6.0pt; margin-right:0in; margin-bottom:4.0pt; margin-left:0in; text-align:justify"><span style="line-height:107%"><b><span style="font-family:&quot;Arial&quot;,sans-serif">Other Duties:</span></b></span></p>
+
+<p style="margin-top:4.0pt; margin-right:0in; margin-bottom:4.0pt; margin-left:0in; text-align:justify"><span style="line-height:107%"><span style="line-height:107%"><span style="font-family:&quot;Arial&quot;,sans-serif">Please note this job description is not designed to cover or contain a comprehensive listing of activities, duties, or responsibilities that are required of the employee for this job.&nbsp; Duties, responsibilities, and activities may change at any time with or without notice.</span></span></span></p>
+</div><div style="text-align:center; margin-top:20px"><div class="buttons"><a href="https://artera.applicantstack.com/x/apply/a2shrbw0a454" class="equal-width-button">Apply Now</a><div class='refer-friend-spacer'>&nbsp;</div><div style='margin-top:10px'><a href="https://artera.applicantstack.com/x/refer/a2shrbw0a454" class="equal-width-button">Refer to a Friend</a></div></div></div></div>
+                <div id="asbranding"><a href="https://applicantstack.com" target="_blank"><img src="/images/poweredby.png" width="150" alt="ApplicantStack powered by Swipeclock" /></a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-container">
+        <div id="inner_footer">
+            Copyright 2022 Artera. All rights reserved.
+            <br />
+            Powered by ApplicantStack&trade; <a href="https://applicantstack.com/hiring-automation-software/" target="_blank">Hiring Automation Software</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

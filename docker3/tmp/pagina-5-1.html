@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LISC Integrated Scheduler Principal - 8-koi, Inc.</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" href="https://www.8-koi.com/images/fav/favicon.ico" type="image/x-icon">
+
+    <!---------------- jQuery ------------------------->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/ui-lightness/jquery-ui.css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://www2.applicantstack.com/links/jquery.multifile.js?links_version=20220127"></script>
+
+    <!---------------- Content ------------------------>
+    <link rel="stylesheet" type="text/css" href="https://www2.applicantstack.com/links/content7_20171128.css?links_version=20220127" />
+    <script type="text/javascript" src="https://www2.applicantstack.com/links/content_20171201a.js?links_version=20220127"></script>
+
+    <!---------------- Bootstrap ---------------------->
+    <script type="text/javascript" src="https://www2.applicantstack.com/links/bootstrap/all/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://www2.applicantstack.com/links/bootstrap/all/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="https://www2.applicantstack.com/links/bootstrap/all/css/bootstrap-theme.css" />
+
+    <!---------------- Chosen ------------------------->
+    <script type="text/javascript" src="https://www2.applicantstack.com/links/chosen/chosen.jquery.min.js" class="as_mobile_skip"></script>
+    <link rel="stylesheet" type="text/css" href="https://www2.applicantstack.com/links/chosen/chosen.css" class="as_mobile_skip" />
+    <style>
+        .chosen-container ul, .chosen-container ol {
+            margin: 0 !important;
+            padding-left: 0 !important;
+        }
+    </style>
+
+    <!---------------- Repeat Group ------------------->
+    <script type="text/javascript" src="https://www2.applicantstack.com/links/repeatgroup.js?links_version=20220127"></script>
+
+    <!---------------- Custom Fonts ------------------>
+    <script src="https://use.fontawesome.com/9646d42c89.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Muli:400,500,700,900" rel="stylesheet">
+
+    <style>
+        @font-face {
+            font-family: 'metropolis';
+            src: url("https://8-koi.applicantstack.com/userdata/8-koi/metropolis-bold-webfont.eot");
+            src: url("https://8-koi.applicantstack.com/userdata/8-koi/metropolis-bold-webfont.eot?#iefix") format("embedded-opentype"), url("https://8-koi.applicantstack.com/userdata/8-koi/metropolis-bold-webfont.woff2") format("woff2"), url("https://8-koi.applicantstack.com/userdata/8-koi/metropolis-bold-webfont.woff") format("woff"), url("https://8-koi.applicantstack.com/userdata/8-koi/fonts/metropolis/metropolis-bold-webfont.ttf") format("truetype"), url("https://8-koi.applicantstack.com/userdata/8-koi/fonts/metropolis/metropolis-bold-webfont.svg#metropolisbold") format("svg");
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'metropolis';
+            src: url("https://8-koi.applicantstack.com/userdata/8-koi/fonts/metropolis/metropolis-extralight-webfont.eot");
+            src: url("https://8-koi.applicantstack.com/userdata/8-koi/fonts/metropolis/metropolis-extralight-webfont.eot?#iefix") format("embedded-opentype"), url("https://8-koi.applicantstack.com/userdata/8-koi/fonts/metropolis/metropolis-extralight-webfont.woff2") format("woff2"), url("https://8-koi.applicantstack.com/userdata/8-koi/fonts/metropolis/metropolis-extralight-webfont.woff") format("woff"), url("https://8-koi.applicantstack.com/userdata/8-koi/fonts/metropolis/metropolis-extralight-webfont.ttf") format("truetype"), url("https://8-koi.applicantstack.com/userdata/8-koi/fonts/metropolis/metropolis-extralight-webfont.svg#metropolisextra_light") format("svg");
+            font-weight: lighter;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'metropolis';
+            src: url("https://8-koi.applicantstack.com/userdata/8-koi/fonts/metropolis/metropolis-regular-webfont.eot");
+            src: url("https://8-koi.applicantstack.com/userdata/8-koi/fonts/metropolis/metropolis-regular-webfont.eot?#iefix") format("embedded-opentype"), url("https://8-koi.applicantstack.com/userdata/8-koi/fonts/metropolis/metropolis-regular-webfont.woff2") format("woff2"), url("https://8-koi.applicantstack.com/userdata/8-koi/fonts/metropolis/metropolis-regular-webfont.woff") format("woff"), url("https://8-koi.applicantstack.com/userdata/8-koi/fonts/metropolis/metropolis-regular-webfont.ttf") format("truetype"), url("https://8-koi.applicantstack.com/userdata/8-koi/fonts/metropolis/metropolis-regular-webfont.svg#metropolisregular") format("svg");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'metropolis';
+            src: url("https://8-koi.applicantstack.com/userdata/8-koi/fonts/metropolis/metropolis-semibold-webfont.eot");
+            src: url("https://8-koi.applicantstack.com/userdata/8-koi/fonts/metropolis/metropolis-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("https://8-koi.applicantstack.com/userdata/8-koi/fonts/metropolis/metropolis-semibold-webfont.woff2") format("woff2"), url("https://8-koi.applicantstack.com/userdata/8-koi/fonts/metropolis/metropolis-semibold-webfont.woff") format("woff"), url("https://8-koi.applicantstack.com/userdata/8-koi/fonts/metropolis/metropolis-semibold-webfont.ttf") format("truetype"), url("https://8-koi.applicantstack.com/userdata/8-koi/fonts/metropolis/metropolis-semibold-webfont.svg#metropolissemi_bold") format("svg");
+            font-weight: bold;
+            font-style: normal;
+        }
+    </style>
+
+
+    <!---------------- mmenu ------------------------->
+    <link type="text/css" href="https://www2.applicantstack.com/userdata/johntesttwo/jquery.mmenu.all.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://www2.applicantstack.com/userdata/johntesttwo/jquery.mmenu.all.js"></script>
+    <script type="text/javascript">
+1
+        jQuery(document).ready(function ($) {
+            $("#menu").mmenu({
+                "extensions": ["pagedim-black"],
+                navbar: {
+                    title: "8-Koi"
+                },
+                offCanvas: {
+                    position: "right",
+                }
+            });
+        });
+    </script>
+
+    <!---------------- Main --------------------------->
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        html {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            overflow-y: scroll;
+        }
+
+        body, html {
+            font-family: 'Muli', sans-serif;
+            background: #fff;
+            color: #666666;
+            font-weight: 400;
+            font-size: 19px;
+            line-height: 27.1429px;
+            padding: 0;
+            margin: 0;
+        }
+
+        #customjbs a img {
+            border: none;
+        }
+
+        #customjbs #outside {
+            text-align: left;
+            position: relative;
+        }
+
+        #customjbs .page {
+            background: #fff;
+        }
+
+        #customjbs #contentouter {
+            margin: 40px auto 0 auto;
+            padding: 0;
+            border: 0;
+            background-color: #fff;
+        }
+
+        #customjbs #ascontainer { /*includes opening instructions*/
+            height: 100%;
+            margin: 0 auto;
+            max-width: 1200px;
+            padding: 0 15px;
+            background-color: #fff;
+        }
+
+            #customjbs #ascontainer a {
+                color: #B2985D;
+                text-decoration: none;
+            }
+
+                #customjbs #ascontainer a:hover {
+                    color:#a78311;
+                }
+
+
+        #customjbs #ascontent {
+            font-family: 'Muli', sans-serif;
+            background: #fff;
+            color: #262626;
+            font-weight: 400;
+            font-size: 19px;
+            line-height: 27.1429px;
+            padding: 0;
+            margin: 0;
+        }
+
+            #customjbs #ascontent a {
+                color: #B2985D;
+                text-decoration: none;
+            }
+
+                #customjbs #ascontent a:hover {
+                   color:#a78311;
+                }
+    </style>
+
+    <!---------------- Form Elements ------------------>
+    <style>
+        /*******main openings table*******/
+        #customjbs .displaytable {
+            margin: 12px 0 6px 0;
+            padding: 5px 8px;
+            border: 1px solid lightgrey;
+        }
+
+            #customjbs .displaytable th {
+                background-color: #262626;
+                border: none;
+                color: #fff;
+                cursor: pointer;
+                padding: 5px;
+                text-align: left;
+                font-weight: normal;
+                text-transform: uppercase;
+                font-size: 18px;
+            }
+
+            #customjbs .displaytable tr:nth-child(even) {
+                background-color: #f7f7f7;
+            }
+
+            #customjbs .displaytable td {
+                padding: 5px;
+                text-align: left;
+                font-weight: normal;
+            }
+
+            #customjbs .displaytable a {
+                text-decoration: none;
+            }
+
+        /*other tables and titles*/
+        #customjbs .formtable div.sectionhead, /*is this still needed?*/
+        #customjbs .sectionhead,
+        #customjbs .infobox,
+        #customjbs .title,
+        #customjbs .qtable_h1 {
+            margin: 12px 0 6px 0;
+            padding: 5px 8px;
+            background-color: #262626;
+            color: #fff;
+            border: 0;
+            text-transform: uppercase;
+            font-size: 18px;
+        }
+
+        /*******branding*******/
+        #customjbs #asbranding {
+            text-align: right;
+            display: block;
+            padding: 40px 0;
+            margin-top: 0px;
+        }
+
+            #customjbs #asbranding img {
+                border: 0;
+            }
+
+        /*******breadcrumbs*******/
+        #customjbs #asbreadcrumbs {
+            margin: 0;
+            line-height: 4em;
+        }
+
+            #customjbs #asbreadcrumbs a {
+                margin: 12px 0 6px 0;
+                padding: 5px 0px;
+                border: 0;
+                text-decoration: none;
+                font-weight: normal;
+            }
+
+                #customjbs #asbreadcrumbs a:hover {
+                }
+
+        /*******titles*******/
+        #customjbs #contenttitle {
+            color: #000000;
+            font-family: 'Lato', sans-serif;
+            font-size: 30.4px;
+            letter-spacing:-0.2px;
+            line-height: 33.44px;
+            font-weight: 500;
+            margin: 20px 0;
+        }
+
+        /*******buttons*******/
+        #customjbs .buttons a,
+        #customjbs .buttons button {
+            background: #B2985D;
+            border-width: 0;
+            border-radius: 3px;
+            box-shadow: none;
+            color: #fff !important;
+            cursor: pointer;
+            font-size: 19px;
+            font-weight: 400 !important;
+            margin: 0;
+            line-height: 27.1429px;
+            padding: 13px;
+            text-align: center;
+            text-shadow: none;
+            transition: all .2s;
+            white-space: nowrap;
+        }
+
+            #customjbs .buttons button:hover,
+            #customjbs .buttons a:hover {
+                background: #c4a04d !important;
+                color: #fff !important;
+            }
+        
+        #customjbs .buttons a.secondary {
+            margin-left: 10px;
+        }
+
+        /*******pagination*******/
+        #customjbs .tablepager {
+            font-size: smaller;
+            font-style: italic;
+            text-align: right;
+        }
+
+        /*******error messages*******/
+        #customjbs .errormsg {
+            background-color: transparent;
+            padding: 4px 8px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-weight: bold;
+            color: red;
+        }
+
+            #customjbs .errormsg li {
+                padding-bottom: 3px;
+                color: black;
+                font-weight: normal;
+            }
+    </style>
+
+    <!---------------- Navigation --------------------->
+    <style>
+        /*first we hide the hamburger menu*/
+        #customjbs .onmobile {
+            display: none;
+        }
+
+        /*then place the container*/
+        #customjbs #desktop-menu {
+            display: inline-block;
+            margin: 0;
+        }
+
+            /*hide the dropdowns by default*/
+            #customjbs #desktop-menu ul ul {
+                display: none;
+            }
+
+            /*but display the dropdowns on hover*/
+            #customjbs #desktop-menu ul li:hover > ul {
+                display: block;
+            }
+
+            /*top level styling*/
+            #customjbs #desktop-menu ul {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                display: block;
+            }
+
+                #customjbs #desktop-menu ul:after {
+                    content: "";
+                    clear: both;
+                    display: block;
+                }
+
+                /*styling of top level list items*/
+                #customjbs #desktop-menu ul li {
+                    position: relative;
+                    display: inline-block;
+                    float: left;
+                    list-style: none;
+                    text-align: center;
+                }
+
+                    /*styling of top level list items on hover*/
+                    #customjbs #desktop-menu ul li:hover {
+                    }
+
+                    /*styling of normal top level links*/
+                    #customjbs #desktop-menu ul li a {
+                        color: #262626;
+                        text-transform: uppercase;
+                        display: inline-block;
+                        font-size: 14px;
+                        line-height: 40px;
+                        padding: 0 10px;
+                        text-align: left;
+                        text-decoration: none;
+                        font-weight: 700;
+                        margin: 0;
+                        font-family: 'Muli', sans-serif;
+                    }
+
+                    /*and then styling of normal top level link on hover*/
+                    #customjbs #desktop-menu ul li:hover > a,
+                    #customjbs #desktop-menu ul li.active a {
+                        color:#B2985D;
+                    }
+
+                /*okay, on to the dropdowns*/
+
+                /*styling of first level dropdown*/
+                #customjbs #desktop-menu ul ul {
+                    font-family: 'Lato', sans-serif;
+                    font-weight: 400;
+                    height: auto;
+                    left: auto;
+                    padding: 0;
+                    position: absolute;
+                    top: 40px; /*adjust this to be flush with line height of top level link*/
+                    transition: opacity .4s ease-in-out;
+                    width: 205px;
+                    z-index: 10000;
+                    box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.06);
+                    -webkit-box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.06);
+                }
+
+                    /*and styling of the list items for first level dropdown */
+                    #customjbs #desktop-menu ul ul li {
+                        margin: 0;
+                        float: none;
+                        background: none;
+                        border: 0px;
+                        display: block;
+                        padding: 0;
+                    }
+
+                        /*... how they display on hover*/
+                        #customjbs #desktop-menu ul ul li:hover {
+                        }
+
+                        /*the first level of drop down links*/
+                        #customjbs #desktop-menu ul ul li a {
+                            text-transform: none !important;
+                            background: #F8F9F9;
+                            display: block;
+                            padding: 15px;
+                            font-size: 14px;
+                            line-height: 14px;
+                            font-weight: 400;
+                            border-top: 0;
+                            margin: 0;
+                            color: #5c748c;
+                            text-transform: uppercase;
+                        }
+
+                            /*... how they display on hover*/
+                            #customjbs #desktop-menu ul ul li a:hover {
+                                background-color: #B2985D;
+                                color: #F8F9F9;
+                            }
+    </style>
+
+    <!---------------- Off Canvas Menu ---------------->
+    <style>
+        .mm-listview {
+            z-index: 99;
+        }
+        
+        .mm-listview>li, .mm-listview>li .mm-next, 
+        .mm-listview>li .mm-next:before, .mm-listview>li:after,
+        .mm-navbar {
+            border-color: rgb(233 233 233 / 0.5);
+        }
+        .mm-menu .mm-listview > li .mm-next:after,
+        .mm-menu .mm-btn:after,
+        .mm-menu .mm-btn:before {
+            color: #F8F9F9;
+            border-color: #fff;
+        }
+
+        .mm-panels, .mm-panels > .mm-panel {
+            background-color: #262626;
+        }
+
+        .mm-listview > li > a,
+        .mm-listview > li > span {
+            font-weight: normal;
+            color: #F8F9F9;
+        }
+
+        .mm-menu .mm-navbar a,
+        .mm-menu .mm-navbar > * {
+            color: #fff;
+            font-size: large;
+        }
+    </style>
+
+    <!---------------- Extras ------------------------->
+    <style>
+        header {
+            background: #fff;
+            min-height: 166.333px;
+            width: 100%;
+        }
+
+        .top-1-wrapper {
+            height: 243.33px;
+            width: 100%;
+            padding: 15px 0;
+            border-top: 12px solid #b2985d;
+            border-bottom: 2px solid #e9e9e9;
+        }
+
+        .top-1 {
+            margin: 0 auto;
+            padding: 0 15px;
+            max-width: 1263.330px;
+            font-family: 'Muli', sans-serif;
+            color: #262626;
+            font-size:16.53px;
+            line-height:23.6143px;
+            letter-spacing:-0.2px;
+        }
+
+        .top-1-phone, .top-1-email {
+            float: right;
+            display: block;
+            max-width: 812px;
+            clear: right;
+            letter-spacing: -0.2px;
+            padding-top: 5px;
+            margin-bottom: 5px;
+        }
+
+            .top-1-phone a, .top-1-email a {
+                color: #262626;
+                float: right;
+                font-family: 'Muli', sans-serif;
+                font-size: 19px;
+                line-height: 27.1429px;
+                text-decoration: none;
+            }
+
+        .fa-phone, .fa-envelope {
+            color: #B2985D;
+            font-size: 19px;
+            vertical-align: sub;
+            margin-right: 6px;
+        }
+
+        .top-1-phone a:hover, .top-1-email a:hover {
+            text-decoration: underline;
+        }
+
+        .fa-facebook-square {
+            color:#3b5998;
+        }
+
+        .fa-twitter-square {
+            color:#55acee;
+        }
+
+        .fa-linkedin-square {
+            color:#0077b5;
+        }
+
+        .top-1-follow {
+            float: right;
+            clear: right;
+            font-size:19px;
+            line-height:27.1429px;
+            color:#262626;
+            font-weight:700;
+            font-family: 'Muli', sans-serif;
+            text-align: right;
+            padding-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .top-1-codes {
+            float: right;
+            clear: right;
+            padding-top: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .top-1-codes b
+        {
+            color: #B2985D;
+            font-weight: 800;
+        }
+
+
+
+        .top-2-wrapper {
+            height: 90.667px;
+            width: 100%;
+        }
+
+        .top-2 {
+        }
+
+        .top-3-wrapper {
+            background-color: #f8f9f9;
+            height: 42px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(57,4,7,0.1)
+        }
+
+        .top-3 {
+            height: 40px;
+            max-width: 1233.33px;
+            padding:0 15px;
+            color: #262626;
+            margin: 0 auto;
+        }
+
+        .fa-angle-down {
+            font-weight: 100;
+        }
+
+
+        .contact-button {
+            float: right;
+            margin: 28px -1px 0 45px;
+            text-decoration: none;
+        }
+
+        .contact-text a {
+            text-decoration: none;
+        }
+
+
+        .contact-arrow {
+            padding: 11.5px 14.5px 13px;
+            background: #bd1616;
+            color: #fff;
+            margin-right: -3.3px;
+        }
+
+        .contact-text {
+            font-family: 'Montserrat', sans-serif;
+            padding: 13px 29px 13px 24px;
+            background: #bd1616;
+            color: #fff;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            letter-spacing: 0px;
+        }
+
+        #customjbs #logo {
+            background-image: url(https://www2.applicantstack.com/userdata/8-koi/8Koi-Logo-Combined.png);
+            background-repeat: no-repeat;
+            height: 189.33px;
+            width: 400px;
+            float: left;
+            background-size: contain;
+            margin: 0px 0 0 0px;
+        }
+
+      
+
+        #customjbs #logo2 {
+            background-image: url(https://www2.applicantstack.com/userdata/lavery/1c86d258b964100583d90050568bfc31.png);
+            background-repeat: no-repeat;
+            height: 66px;
+            width: 250px;
+            float: left;
+            background-size: contain;
+            margin: 12px 10px 10px 10px;
+        }
+
+        #site_strap {
+            color: #000000;
+            font-size: 12px;
+            line-height: 90.67px;
+            float: left;
+            font-family: 'Louis-Bold';
+            padding: 0 10px;
+        }
+
+
+        .fa-angle-down {
+            font-weight: 100 !important;
+            vertical-align: middle;
+            padding: 0 0 0 5px;
+            color: #5c748c;
+            font-size: 22px !important;
+        }
+
+        .footer-1-wrapper {
+            width: 100%;
+            overflow: auto;
+            padding: 0 10px;
+            background: #000;
+            text-align:center;
+        }
+
+        .footer-1 {
+            padding:15px 0;
+            max-width: 1223.330px;
+            color: #fff;
+            font-size:19px;
+            line-height:27.1429px;
+        }
+
+            .footer-1 a {
+                text-decoration: none;
+                color: #fff;
+            }
+
+                .footer-1 a:hover {
+                    text-decoration: underline;
+                }
+
+        .footer-1-socials {
+            float: right;
+            display: inline-block;
+        }
+    </style>
+
+    <!---------------- Filters ------------------------>
+    <style>
+        .filter_header {
+            color: #3e5c77;
+            font-weight: 700 !important;
+            font-size: 14px;
+            line-height: 21px;
+            font-family: 'Louis-Bold', sans-serif;
+        }
+
+        #customjbs .filter_button {
+            margin-top: 30px !important;
+        }
+
+        #customjbs #filters_wrapper {
+            background: #f2f2f2;
+            padding: 20px 10px;
+            margin: 20px 0;
+            border: none;
+        }
+
+        #filters_wrapper input, #filters_wrapper select, #filters_wrapper .chosen-choices .default {
+            line-height: 1em;
+        }
+
+        .job_filter {
+            float: left;
+            margin-right: 5px;
+            width: 24%;
+            height: 54px;
+            margin-top: 10px;
+        }
+    </style>
+
+    <!---------------- Breakpoints -------------------->
+    <style>
+        @media all and (max-width : 810px) {
+            .top-1-codes {
+                display: none;
+            }
+        }
+
+        @media all and (max-width : 650px) {
+            #customjbs #main-menu-toggle {
+                display: inline-block;
+                font-size: 30px;
+                font-weight: normal;
+                line-height: 40px;
+                text-decoration: none;
+                color: #262626;
+            }
+
+            #customjbs #desktop-menu ul {
+                display: none;
+            }
+
+            #logo {
+                width: 250px !important;
+                margin-top: 50px !important;
+            }
+        }
+
+
+
+        @media all and (max-width : 608px) {
+            .top-1-phone, .top-1-email, .top-1-follow {
+                display: none;
+            }
+        }
+
+
+
+
+    </style>
+
+    <!---------------- Print Style Sheet -------------->
+    <style type="text/css" media="print">
+        #contentouter {
+            border: 0;
+        }
+
+        #outside {
+            border: 0;
+        }
+
+        body {
+            background-color: white;
+        }
+    </style>
+
+<meta name="robots" content="noindex">
+</head>
+<body id="customjbs">
+    <div id="wrapper">
+        <div id="outside">
+            <div class="page">
+
+
+                <header>
+                    <div class="top-1-wrapper">
+                        <div class="top-1">
+                            <a href="https://www.8-koi.com/"><div id="logo"></div></a>
+                            <div class="top-1-phone"><i class="fa fa-phone"></i> <b><a href="tel:1-321-799-2970">(321) 802-6768</a></b></div>
+                            <div class="top-1-email"><i class="fa fa-envelope"></i> <b><a data-email="info" data-domain="8-koi.com" href="mailto:recruiting@8-koi.com">recruiting@8-koi.com</a></b></div>
+                            <div class="top-1-follow">
+                                <b>Follow Us:</b><br>
+                                <a href="https://www.facebook.com/8koiinc/" class="fb" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a>
+                                <a href="https://twitter.com/8koiinc" class="tw" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+                                <a href="https://www.linkedin.com/company/8-koi/" class="li" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
+                            </div>
+                            <div class="top-1-codes"><small><nobr><b>DUNS:</b> 829197503</nobr> | <nobr><b>FEIN:</b> 26-3089577</nobr> | <nobr><b>Cage Code:</b> 5FCT4</nobr></small></div>
+                        </div>
+                    </div>
+                    <!--<div class="top-2-wrapper">
+                        <div class="top-2">
+                            <a href="https://www.laveryauto.com/"><div id="logo2"></div></a>
+                            <a href="https://www.laveryauto.com/"><div id="site_strap">CAR SHOPPING MADE EASY!</div></a>
+                        </div>
+                    </div>-->
+                    <div class="top-3-wrapper">
+                        <div class="top-3">
+                            <a class="onmobile" id="main-menu-toggle" href="#menu">&#9776;</a>
+                            <nav id="desktop-menu">
+                                <ul>
+                                    <li><a href="https://www.8-koi.com/">Home</a></li>
+                                    <li><a href="https://www.8-koi.com/who-we-are">Who We Are</a></li>
+                                    <li><a href="https://www.8-koi.com/capabilities">Capabilities</a>
+                                        <ul>
+                                            <li><a href="https://8-koi.com/technical-administrative">Technical &amp; Administrative</a></li>
+                                            <li><a href="https://8-koi.com/construction">Construction</a></li>
+                                            <li><a href="https://8-koi.com/healthcare">Healthcare</a></li>
+                                            <li><a href="https://8-koi.com/design-engineering">Design Engineering</a></li>
+                                            <li><a href="https://8-koi.com/naics">NAICS</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="https://www.8-koi.com/news">News</a></li>
+                                    <li class="active"><a href="https://www.8-koi.com/careers">Careers</a></li>
+                                    <li><a href="https://www.8-koi.com/contact-us">Contact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </header>
+
+                <div style="clear:both"></div>
+
+                <main id="contentouter">
+                    <div id="ascontainer">
+                        <div id="asbreadcrumbs"></div>
+                        <div id="ascontent"><script>
+	// Load jQuery if not defined or less than version 1.9.1 (required by bootstrap)
+	var jquery_is_loaded = true;
+	if (typeof jQuery === 'undefined') {
+		jquery_is_loaded = false;
+	}
+	else{
+		var jquery_version = jQuery.fn.jquery.split(' ')[0].split('.');
+		if ((jquery_version[0] < 2 && jquery_version[1] < 9) || (jquery_version[0] == 1 && jquery_version[1] == 9 && jquery_version[2] < 1)) {
+			jquery_is_loaded = false;
+		}
+	}
+	if(!jquery_is_loaded){
+		load_script('https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js');
+	}
+	
+	// Load bootstrap if not loaded
+	if (typeof $.fn.popover != 'function'){
+		load_script('/links/bootstrap/all/js/bootstrap.js');
+		load_link('/links/bootstrap/all/css/bootstrap.css');
+		load_link('/links/bootstrap/all/css/bootstrap-theme.css');
+	}
+	
+	function load_script(src){
+		var h = document.getElementsByTagName('head')[0];
+		var e = document.createElement('script');
+		e.src = src;
+		h.appendChild(e);
+	}
+	function load_link(href){
+		var h = document.getElementsByTagName('head')[0];
+		var e = document.createElement('link');
+		e.rel = 'stylesheet';
+		e.type = 'text/css';
+		e.href = href;
+		h.appendChild(e);
+	}
+</script><div id="asbreadcrumbs"><a href="https://8-koi.applicantstack.com/x/openings">Job Openings</a> &gt;&gt; LISC Integrated Scheduler Principal</div><div id="contenttitle" style="clear:both">LISC Integrated Scheduler Principal</div><div class="sectionhead">Summary</div><table class="formtable"><tr><th>Title:</th><td class="noinput">LISC Integrated Scheduler Principal</td></tr><tr><th>ID:</th><td class="noinput">5501</td></tr><tr><th>Department:</th><td class="noinput">Operations</td></tr><tr><th>Location:</th><td class="noinput">Patrick SFB, Florida</td></tr></table><div class="sectionhead description_head">Description</div><div class="listing_description show_listing_description"><p><font color="#000000" face="Georgia, serif"><span style="font-size: 14.6667px; background-color: rgb(224, 224, 224);"><b>&nbsp;</b></span></font></p>
+
+<p><span style="background:#e0e0e0"><b><span style="font-size:11pt"><span style="font-family:Georgia, serif">Job purpose</span></span></b></span></p>
+
+<p>&nbsp;</p>
+
+<p style="margin-left:.25in"><span style="font-size:11.0pt"><span georgia="" style="font-family:">To provide assistance with Integrated Scheduling for 8-koi; a diverse Florida based service and consulting company that has been providing outstanding results for our clients for over 13-years.</span></span></p>
+
+<p style="margin-left:.25in">&nbsp;</p>
+
+<p><span style="background:#e0e0e0"><b><span style="font-size:11pt"><span style="font-family:Georgia, serif">Duties and responsibilities</span></span></b></span></p>
+
+<p>&nbsp;</p>
+
+<ul>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Develop, update and maintain Integrated Master Schedule (IMS) for dozens of projects with key project milestones and 100s of tasks in support of the Eastern Ranges (Cape Canaveral and Kennedy Space Center Launch Complex)</span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Conduct critical path analysis and schedule risk analysis</span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Track, monitor, and analyze the integration of multiple project schedules that could impact project execution</span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Identify dependencies, issues and conflicts between tasks necessary to achieve key events or milestones, as well as their strategic impacts</span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Generate reports from the IMS depicting scheduling conflicts and issues and brief stakeholders and senior management </span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Provide impact analysis of schedule changes, identify schedule variances and opportunities, and proactively develop mitigation strategies for the Project Management Team</span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Support Range and Contractor meetings with IMS data</span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Create ad hoc schedules as required for special projects</span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Other duties as assigned </span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Strong communication skills to communicate concepts to management</span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Strong organizational skills </span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Flexible and willing and able to manage fluid and evolving priorities </span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Strong leadership skills and able to run effective and efficient meetings</span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Ability to follow stringent processes</span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Strong ethical standards for managing non-LISC data and Range data</span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Strong analytical and problem-solving skills</span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Self-starter who is able to work independently with minimal supervision</span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Interact professionally with Project Managers, team leaders, program support staff, subcontractors, and the Government customer.</span></span></li>
+</ul>
+
+<p style="margin-left:.5in">&nbsp;</p>
+
+<p><span style="background:#e0e0e0"><b><span style="font-size:11pt"><span style="font-family:Georgia, serif">Qualifications</span></span></b></span></p>
+
+<p>&nbsp;</p>
+
+<ul>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Shall possess a Bachelor&rsquo;s Degree in business or engineering discipline or equivalent combination of education and experience</span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Possess a minimum five years Scheduling experience</span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Experience drafting, editing, and tracking scheduling products with minimal direction</span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Experience in providing detailed analysis of project schedules and critical path reduction options</span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Strong Microsoft (MS) Office Project skill level and strong MS Excel skill level</span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Experience with Microsoft Office Project Server creating custom views and filters for specific milestones and tasks. Experience writing VBA macros is a plus</span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Ability to multi-task and work independently, and have a sharp attention to detail </span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Project Management Institute (PMI) PMP or PMI-SP Certification, preferred</span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">The flexibility to work occasional non-duty hours or on weekends to support specific project or mission requirements</span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Must be able to obtain and maintain a DoD Secret Security Clearance, which includes U.S. citizenship or U.S. naturalization</span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Valid U.S. Driver&rsquo;s License required</span></span></li>
+	<li><span style="font-size:11.0pt"><span georgia="" style="font-family:">Temporary telecommuting available</span></span></li>
+</ul>
+
+<p>&nbsp;</p>
+
+<ol start="14" style="list-style-type:lower-alpha">
+	<li value="238451"><i><span style="font-size:11.0pt"><span georgia="" style="font-family:">This job description describes the general nature of the duties and requirements of the job. It is not intended to be an exhaustive list or to limit the supervisor&#39;s ability to modify work assignments as appropriate.</span></span></i></li>
+</ol>
+
+<p>&nbsp;</p>
+
+<p><span style="background:#e0e0e0"><b><span style="font-size:11pt"><span style="font-family:Georgia, serif">Working conditions</span></span></b></span></p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size:11.0pt"><span georgia="" style="font-family:">Working conditions are within a normal office environment.</span></span></p>
+
+<p>&nbsp;</p>
+
+<p><span style="background:#e0e0e0"><b><span style="font-size:11pt"><span style="font-family:Georgia, serif">Physical requirements</span></span></b></span></p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size:11.0pt"><span georgia="" style="font-family:">Normal office environment mobility; sitting, walking, bending, stooping, standing, lifting a maximum of 25 pounds (greater than 25 pounds requires a two-person lift), turning, pushing. Normal office dexterity, to include; reaching, handling, grasping, to include typing/keyboard, and phone use.</span></span><br />
+<br />
+EQUAL OPPORTUNITY EMPLOYER: 8-koi and, its wholly owned subsidiary, Cape Design Engineering (CDE) are Equal Opportunity Employers. 8-koi and CDE do not discriminate on the basis of race, religion, color, sex, gender identity, sexual orientation, age, non-disqualifying physical or mental disability, national origin, veteran status or any other basis covered by appropriate law. Our commitment to equal opportunity employment applies to all persons involved in our operations and prohibits unlawful discrimination by any employee, including supervisors and co-workers.</p>
+</div><div style="margin-top:20px; text-align:center" class="errormsg">This opening is closed and is no longer accepting applications</div></div>
+                        <div id="asbranding"><a href="https://applicantstack.com" target="_blank"><img src="/images/poweredby.png" width="150" alt="ApplicantStack powered by Swipeclock" /></a></div>
+                    </div>
+                </main>
+
+                <div style="clear:both"></div>
+
+                <footer>
+                    <div class="footer-1-wrapper">
+                        <div class="footer-1">
+                            Copyright &copy; 2022 8-koi  -  Powered by ApplicantStack&trade; <a href="https://applicantstack.com/hiring-automation-software/" target="_blank">Hiring Software</a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <nav id="menu">
+            <ul class="listview-icons mm-listview">
+                <li><a href="https://www.8-koi.com/">Home</a></li>
+                <li><a href="https://www.8-koi.com/who-we-are">Who We Are</a></li>
+                <li><a href="https://www.8-koi.com/capabilities">Capabilities</a>
+                    <ul>
+                        <li><a href="https://8-koi.com/technical-administrative">Technical &amp; Administrative</a></li>
+                        <li><a href="https://8-koi.com/construction">Construction</a></li>
+                        <li><a href="https://8-koi.com/healthcare">Healthcare</a></li>
+                        <li><a href="https://8-koi.com/design-engineering">Design Engineering</a></li>
+                        <li><a href="https://8-koi.com/naics">NAICS</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://www.8-koi.com/news-2">News</a></li>
+                <li class="active"><a href="https://www.8-koi.com/careers">Careers</a></li>
+                <li><a href="https://www.8-koi.com/contact-us">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

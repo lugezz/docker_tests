@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="https://www.buffaloschools.org" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Elementary Education Teacher - Buffalo Public Schools</title>
+
+<!---------------- jQuery ------------------------->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/ui-lightness/jquery-ui.css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://www2.applicantstack.com/links/jquery.multifile.js?links_version=20220127"></script>
+
+    <style>
+        /*NOTE: These styles are for IE7+*/
+        *[id^="sw-"] {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            color: #000;
+            font-family: Verdana, Geneva, sans-serif;
+            font-size: 12px;
+            outline: none;
+        }
+
+        *[class^="sw-"] {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            color: #000;
+            font-family: Verdana, Geneva, sans-serif;
+            font-size: 12px;
+            outline: none;
+        }
+
+        html {
+            background: #244b6f url('/pix2012/bg-repeat-background.png');
+        }
+
+        body {
+            position: relative;
+            font-family: Verdana, Geneva, sans-serif;
+            font-size: 12px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: #244b6f;
+            text-decoration: none;
+        }
+
+            a:visited {
+                color: #244b6f;
+            }
+
+            a:hover {
+                color: #333;
+                text-decoration: underline;
+            }
+
+        .sw-clearfix {
+            clear: both;
+        }
+
+        .sw-column {
+            float: left;
+            height: auto;
+            min-height: 255px;
+        }
+
+        .sw-subHeader {
+            font: normal 20px/32px "Century Gothic", Tahoma, Geneva, sans-serif;
+            text-transform: uppercase;
+            padding: 0 10px;
+            background: #244b6f url('/pix2012/bg-repeat-subHeader.png') repeat-x;
+            color: #f7bd01;
+        }
+
+        a.sw-button {
+            display: block;
+            float: right;
+            width: 114px;
+            height: 11px;
+            padding: 8px 0;
+            color: #fff;
+            font-size: 10px;
+            text-transform: lowercase;
+            text-indent: 35px;
+            margin: 1px 2px 0 0;
+        }
+
+
+        #sw-navUtilitiesBG {
+            background: #244b6f url('/pix2012/bg-repeat-navUtilities.png') 0 0 repeat-x;
+            min-width: 990px;
+            max-width: 1360px;
+            margin: 0 auto;
+        }
+
+        #sw-navUtilities {
+            position: relative;
+            height: 32px;
+        }
+
+        .contact {
+            background: url('/pix2012/bg-contact.png');
+        }
+
+        .sitemap {
+            background: url('/pix2012/bg-sitemap.png');
+        }
+
+        .distHome {
+            background: url('/pix2012/bg-home.png');
+        }
+
+        .schoolHome {
+            background: url('/pix2012/bg-home.png');
+        }
+
+        #sw-navSearch {
+            width: 173px;
+            height: 27px;
+            float: right;
+            background: url('/pix2012/bg-search.png');
+            margin: 1px 0 0;
+        }
+
+            #sw-navSearch input {
+                border: none;
+                background: none;
+                color: #fff;
+                font-size: 10px;
+                padding: 6px 4px;
+                font-family: Verdana, Geneva, sans-serif;
+            }
+
+            #sw-navSearch button {
+                width: 25px;
+                height: 26px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+
+
+        #sw-pageContainer {
+            position: relative;
+            background: #244b6f;
+            min-width: 990px;
+            max-width: 1360px;
+            margin: 0 auto;
+        }
+
+        #sw-header {
+            position: relative;
+            height: 117px;
+            margin: 0;
+            width: auto;
+            background: url('/pix2012/bg-grafixPanelSubLeft.png') 0 0 no-repeat;
+        }
+
+        #sw-clientLogo {
+            position: absolute;
+            top: 0;
+            right: 0;
+            outline: none;
+        }
+
+        #sw-clientName {
+            color: #fff;
+            font: normal 32px/36px "Times New Roman", Times, serif;
+            width: 400px;
+            text-align: right;
+            position: absolute;
+            top: 10px;
+            right: 30px;
+        }
+
+
+        #sw-contentContainer {
+            position: relative;
+            background: #fff url('/pix2012/bg-repeat-contentContainerTop.jpg') 0 0 repeat-x;
+            height: 100%;
+            margin: 0 auto;
+            width: auto;
+            padding-top: 10px;
+        }
+
+        #sw-contentContainerInner {
+            position: relative;
+            width: auto;
+            height: auto;
+            background: #fff url('/pix2012/bg-repeat-contentContainerBtm.jpg') bottom left repeat-x;
+            padding-bottom: 10px;
+        }
+
+        #sw-contentContainerInner2 {
+            position: relative;
+            width: auto;
+            height: auto;
+            background: #fff url('/pix2012/bg-repeat-contentContainerRight.jpg') top right repeat-y;
+        }
+
+        #sw-contentContainerInner3 {
+            position: relative;
+            width: auto;
+            height: auto;
+            background: #fff url('/pix2012/bg-repeat-contentContainerLeft.jpg') 0 0 repeat-y;
+            margin-right: 10px;
+        }
+
+        #sw-contentContainer1, #sw-contentContainer2, #sw-contentContainer3, #sw-contentContainer4 {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+        }
+
+        #sw-contentContainer1 {
+            top: 0;
+            left: 0;
+            background: #fff url('/pix2012/bg-contentContainerTopLeft.jpg') 0 0 no-repeat;
+        }
+
+        #sw-contentContainer2 {
+            top: 0;
+            right: 0;
+            background: #fff url('/pix2012/bg-contentContainerTopRight.jpg') 0 0 no-repeat;
+        }
+
+        #sw-contentContainer3 {
+            bottom: 0;
+            left: 0;
+            background: #fff url('/pix2012/bg-contentContainerBtmLeft.jpg') 0 0 no-repeat;
+        }
+
+        #sw-contentContainer4 {
+            bottom: 0;
+            right: 0;
+            background: #fff url('/pix2012/bg-contentContainerBtmRight.jpg') 0 0 no-repeat;
+        }
+
+        #sw-sideCol1 {
+            position: relative;
+            width: 240px;
+            float: left;
+            height: auto;
+            min-height: 250px;
+            padding-top: 1px;
+        }
+
+        #sw-sideCol1-1 {
+            position: relative;
+            width: 224px;
+            height: auto;
+            background: #fff url('/pix2012/bg-repeat-columnTop.png') repeat-x;
+            margin: 0 0 15px 10px;
+            padding: 0 0 30px 0;
+        }
+
+        #sw-subHeader1 {
+            position: relative;
+            outline: none;
+            height: auto;
+            min-height: 32px;
+            width: 204px;
+            background: #244b6f url('/pix2012/bg-repeat-subHeader.png');
+        }
+
+        #sw-navLinks {
+            position: relative;
+            width: 214px;
+            padding: 0;
+            margin: 0;
+            margin: 5px auto;
+            background: #fff;
+            border-bottom: none;
+        }
+
+            #sw-navLinks ul {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+            }
+
+                #sw-navLinks ul li {
+                    border-bottom: 1px solid #244b6f;
+                    text-transform: uppercase;
+                }
+
+                    #sw-navLinks ul li a {
+                        display: block;
+                        padding: 5px;
+                        background: #fff;
+                        min-height: 16px;
+                        color: #244b6f;
+                    }
+
+                        #sw-navLinks ul li a:visited {
+                            color: #244b6f;
+                        }
+
+                        #sw-navLinks ul li a:hover {
+                            background: #244b6f;
+                            color: #d1d1d1;
+                            text-decoration: underline;
+                        }
+
+                #sw-navLinks ul ul li a {
+                    background: #fff;
+                    color: 244b6f;
+                }
+
+                    #sw-navLinks ul ul li a:visited {
+                        background-color: #fff;
+                    }
+
+                    #sw-navLinks ul ul li a:hover {
+                        background-color: #FFF;
+                        border: none;
+                        color: #244b6f;
+                    }
+
+        a.LinkLeft:hover {
+            color: #000;
+        }
+
+        #sw-navLinks p {
+            margin: 0;
+            padding: 10px 5px;
+            font: bold 14px/16px Verdana, Geneva, sans-serif;
+            color: #f7bd01;
+            border-bottom: 1px solid #244b6f;
+            background: #244b6f;
+        }
+
+        #sw-randomImage {
+            position: relative;
+            margin: 15px 0 10px 25px;
+        }
+
+        address {
+            text-align: center;
+            font-size: 11px;
+            font-style: normal;
+            color: #244b6f;
+            margin: 15px auto 10px;
+        }
+
+            address b {
+                color: #244b6f;
+            }
+
+
+
+        #sw-contentMain {
+            position: relative;
+            background: #fff;
+            margin-left: 240px;
+            width: auto;
+            height: auto;
+            min-height: 255px;
+            padding-top: 1px;
+        }
+
+        #sw-subHeader3 {
+            position: relative;
+            outline: none;
+            height: 32px;
+            width: auto;
+            background: #244b6f url('/pix2012/bg-repeat-subPageHeader.png') repeat-x;
+            margin: 0;
+        }
+
+        #sw-subHeaderLeft {
+            position: relative;
+            height: 32px;
+            width: 15px;
+            background: #244b6f url('/pix2012/bg-subPageHeaderLeft.png') no-repeat;
+            float: left;
+        }
+
+        #sw-subHeaderRight {
+            position: relative;
+            height: 32px;
+            width: 15px;
+            background: #244b6f url('/pix2012/bg-subPageHeaderRight.png') no-repeat;
+            float: right;
+        }
+
+        #sw-clientHeader {
+            width: auto;
+            height: 32px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: none;
+        }
+
+        #sw-clientContent {
+            position: relative;
+            margin: 10px;
+            height: auto;
+            width: auto;
+            min-height: 250px;
+        }
+
+            #sw-clientContent a {
+                color: #244b6f;
+                font-weight: bold;
+            }
+
+                #sw-clientContent a:visited {
+                    color: #244b6f;
+                }
+
+                #sw-clientContent a:hover {
+                    color: #333;
+                    text-decoration: underline;
+                }
+
+
+
+        #sw-bannerFooter {
+            background: #fff;
+            clear: both;
+        }
+
+        #sw-footer {
+            position: relative;
+            width: auto;
+            height: 32px;
+            margin: 0 auto;
+            background: #f7bd01 url('/pix2012/bg-repeat-footer.png') repeat-x;
+        }
+
+        #sw-breadCrumb {
+            padding-bottom: 5px;
+        }
+    </style>
+
+
+
+
+    <link href="/myicons/pix/globalCSS/nav-indentLinks.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+    <style>
+        #sw-navContainer {
+            width: auto;
+            height: 40px;
+            z-index: 503;
+            background: #244b6f;
+        }
+
+        #sw-navMain {
+            position: relative;
+            width: auto;
+            height: auto;
+            min-height: 38px;
+            margin: 0 auto;
+            z-index: 502;
+            padding: 0 0 0 8px;
+        }
+
+        .sw-dropDown {
+            display: block;
+            float: left;
+            width: auto;
+            margin: 0;
+            padding: 0;
+            z-index: 501;
+        }
+
+        .sw-mainButton {
+            display: block;
+            height: 38px;
+            width: auto;
+            font: normal 14px/38px Arial, sans-serif;
+            color: #f7bd01;
+            background: #244b6f;
+            padding: 0 15px;
+            text-decoration: none;
+            z-index: 500;
+            white-space: nowrap;
+        }
+
+            .sw-mainButton:visited {
+                color: #f7bd01;
+            }
+
+            .sw-mainButton:hover {
+                color: #244b6f;
+                background: #f7bd01;
+                text-decoration: none;
+            }
+
+        .sw-dropDown > ul {
+            position: absolute;
+            top: 38px;
+            left: 0;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            display: none;
+            background: #244b6f;
+            border: 1px solid #f7bd01;
+            z-index: 499;
+        }
+
+        .sw-dropDown:hover ul {
+            display: block;
+        }
+
+        .sw-dropDown li {
+            border-top: 1px solid #f7bd01;
+        }
+
+            .sw-dropDown li:first-child {
+                border: none;
+            }
+
+            .sw-dropDown li a {
+                position: relative;
+                display: block;
+                padding: 4px 10px;
+                text-decoration: none;
+                color: #f7bd01;
+                background: #244b6f;
+                white-space: nowrap;
+                font: normal 11px/11px Arial, sans-serif;
+            }
+
+                .sw-dropDown li a:visited {
+                    color: #f7bd01;
+                }
+
+                .sw-dropDown li a:hover {
+                    background: #f7bd01;
+                    color: #244b6f;
+                    text-decoration: none;
+                }
+
+
+        .sw-arrow {
+            display: block;
+            border: 5px solid transparent;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            position: absolute;
+            top: 5px;
+            right: 0;
+        }
+
+            .sw-arrow.right {
+                border-left-color: #f7bd01;
+            }
+
+        .sw-dropDown li.hasChildren a:hover .sw-arrow.right {
+            border-left-color: #244b6f;
+        }
+
+        .sw-dropDown li.hasChildren {
+            position: relative;
+            overflow: visible;
+        }
+
+            .sw-dropDown li.hasChildren > a {
+                padding-right: 20px;
+            }
+
+            .sw-dropDown li.hasChildren ul {
+                display: none;
+                position: absolute;
+                top: 0;
+                right: -200px;
+                width: 200px;
+                border: 1px solid blue;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                text-align: left;
+                background: #244b6f;
+                border: 1px solid #f7bd01;
+                z-index: 501;
+            }
+
+            .sw-dropDown li.hasChildren:hover ul {
+                display: block;
+            }
+
+            .sw-dropDown li.hasChildren ul a {
+                white-space: normal;
+            }
+    </style>
+
+    <script type="text/javascript">var jqWritten=false;function jqCheck(){if(typeof(jQuery)=='undefined' && !jqWritten){jqWritten=true;document.write("<script type=\"text/javascript\" src=\"/myicons/pix/jquery/jquery.js\"></scr"+"ipt>");setTimeout("jqCheck()", 100);}}jqCheck();</script>
+
+    <script>
+	$(function(){
+		var totalWidth = 0;
+		$('.sw-mainButton').each(function(index) {
+			totalWidth += $(this).outerWidth()+1;
+		});
+		$('#sw-navMain').css('width',totalWidth+'px');
+	});//document ready
+    </script>
+    <style>
+        #sw-navContainer {
+            width: auto;
+            height: 40px;
+            background: #f7bd01;
+            border-top: 2px solid #244b6f;
+            border-bottom: 2px solid #244b6f;
+        }
+
+        #sw-navMain {
+            position: relative;
+            width: auto;
+            height: auto;
+            min-height: 38px;
+            margin: 0 auto;
+        }
+
+        .sw-mainButton {
+            font: bold 13px/38px Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+            background: none;
+            padding: 0 18px;
+            color: #244b6f;
+        }
+
+        .sw-mainButton {
+            border-right: 1px solid #244b6f;
+        }
+
+        #sw-navMain div:first-child {
+            border-left: 1px solid #244b6f;
+        }
+
+        .sw-mainButton:visited {
+            background: #f7bd01;
+            color: #244b6f;
+        }
+
+        .sw-mainButton:hover {
+            background: #f7bd01;
+            color: #244b6f;
+        }
+
+        .sw-dropDown ul {
+            top: 38px;
+            -moz-box-shadow: rgba(0,0,0,0.5) 3px 3px 5px;
+            -webkit-box-shadow: rgba(0,0,0,0.5) 3px 3px 5px;
+            box-shadow: rgba(0,0,0,0.5) 3px 3px 5px;
+        }
+
+        .sw-dropDown li {
+            border-top: 1px solid #244b6f;
+        }
+
+            .sw-dropDown li a, .sw-dropDown li a:visited {
+                font: normal 12px/12px Arial, sans-serif;
+                color: #244b6f;
+                background: #f7bd01;
+            }
+
+                .sw-dropDown li a:hover {
+                    color: #f7bd01;
+                    background: #244b6f;
+                }
+
+        .sw-arrow.right {
+            border-left-color: #244b6f;
+        }
+
+        .sw-dropDown li.hasChildren a:hover .sw-arrow.right {
+            border-left-color: #f7bd01;
+        }
+    </style>
+    <!-- BEGIN APPLICANTSTACK HEADER -->
+    <!-- <table class="qtable"><tr><td class="qtable_q">{QT}:</td><td class="assignature">{QI}</td></tr></table>  -->
+    <link type="text/css" rel="stylesheet" href="https://www2.applicantstack.com/links/content4.css?links_version=20220127" />
+    <link href='https://fonts.googleapis.com/css?family=Cedarville+Cursive' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="https://www2.applicantstack.com/links/content.js?links_version=20220127"></script>
+    <style type="text/css">
+        #asmyaccount a:link, #asmyaccount a:visited, #ascontainer a:link, #ascontainer a:visited {
+            color: blue;
+        }
+
+        .displaytable a:link, .displaytable a:visited {
+            color: black !important;
+        }
+
+        a:link {
+            text-decoration: underline;
+        }
+
+        .as_app_header {
+            width: 100%;
+            text-align: center;
+            vertical-align: middle;
+            border: 1px solid #0000ff;
+            font-size: 1.1em;
+            padding: .3em 0;
+            font-weight: bold;
+            background-image: url(https://template2.applicantstack.com/images/tableback.gif);
+            ;
+        }
+
+        .as_app_cell {
+            display: inline-block;
+            width: 100%;
+            height: 1.8em;
+            padding: .4em 0;
+            vertical-align: middle;
+            text-align: center;
+            border: 1px solid #0000ff;
+            background-color: #f5f5f5;
+        }
+
+        .as_app_block {
+            display: inline-block;
+            width: 100%;
+            height: 4.5em;
+            padding: .5em 0;
+            vertical-align: middle;
+            text-align: center;
+            border: 1px solid #0000ff;
+            background-color: #f5f5f5;
+        }
+
+        .as_app_list_wrap {
+            width: 230px;
+            margin-top: 8px;
+            margin-left: 8px;
+            float: left;
+            border: 1px solid #0000ff;
+        }
+
+        .as_app_list_headline {
+            width: 100%;
+            height: 1.5em;
+            text-align: center;
+            padding: .25em 0;
+            background-color: #4f81bd;
+            color: #ffffff;
+            font-weight: bold;
+            border: 1px solid #0000ff;
+        }
+
+        div#ascontainer .inputradio {
+            margin-bottom: 6px !important;
+        }
+
+        div#ascontainer .as_app_question, div.contentbox .as_app_question {
+            display: inline;
+            width: 100%;
+            text-align: left;
+            margin-left: 1%;
+        }
+
+        div#ascontainer .as_app_answer, div.contentbox .as_app_answer {
+            display: inline-block;
+            width: 100%;
+            margin-left: 4%;
+            text-align: left;
+        }
+
+        div#ascontainer .as_app_2col_47, div.contentbox .as_app_2col_47 {
+            width: 47%;
+            display: inline;
+            float: left;
+            padding-bottom: 1.2em;
+        }
+
+        div#ascontainer .as_app_2col_6_fill, div.contentbox .as_app_2col_6_fill {
+            display: inline;
+            float: left;
+            width: 6%;
+            height: 3em;
+        }
+
+        div#ascontainer .clearboth, div.contentbox .clearboth {
+            clear: both;
+        }
+
+        div#ascontainer .as_app_answer select, div.contentbox .as_app_answer select {
+            font-weight: bold;
+        }
+
+        #ascontainer table.displaytable .inputtext, #ascontainer table.displaytable .textarea, #ascontainer table.displaytable .inputpassword {
+            background-color: #f3f3f3;
+        }
+
+        #ascontainer table.displaytable textarea.textarea {
+            /*  width:110px; */
+        }
+
+        #ascontainer table.displaytable input.inputtext {
+            /*  width:150px; */
+        }
+
+        div.qtable_h1 {
+            background-color: #244b6f !important;
+            color: #f7bd01 !important;
+            min-height: 1.2em;
+            padding-bottom: 2px;
+        }
+
+        #ascontainer, #ascontainer td, #ascontainer th, #ascontainer li {
+            color: #000000;
+            line-height: 17px;
+            font-size: 14px;
+        }
+
+        #contenttitle {
+            color: #f7bd01;
+            font-weight: bold;
+            font-size: 2em;
+            line-height: 120%;
+            margin-top: 0;
+        }
+
+        #ascontainer p, #ascontainer ul, #ascontainer ol {
+            margin: 1em 0px;
+        }
+
+        #ascontainer ol, #ascontainer ul {
+            padding-left: 30pt;
+        }
+
+        #ascontainer {
+            display: inline;
+            float: left;
+            /*width:1045px;*/
+            margin: auto;
+            padding: 20px;
+        }
+
+            #ascontainer fieldset {
+                border: 2px groove threedface !important;
+                margin-left: 2px !important;
+                margin-right: 2px !important;
+                padding: 0.35em 0.75em 0.625em !important;
+            }
+
+            #ascontainer legend {
+                padding-left: 2px !important;
+                padding-right: 2px !important;
+            }
+
+        .displaytable th, .sectionhead, .formtable div.sectionhead {
+            background-color: #244b6f;
+            color: #f7bd01 !important;
+            padding-bottom: 2px;
+        }
+
+        #asbreadcrumbs {
+            color: #f7bd01;
+            font-size: 12px !important;
+        }
+
+            #asbreadcrumbs a:link, #asbreadcrumbs a:visted {
+                font-size: 12px !important;
+                color: pink !important;
+            }
+
+        #ascontainer .buttons button, #ascontainer .buttons a {
+            background-color: #244b6f;
+            color: #f7bd01 !important;
+        }
+
+        .assignature .inputtext {
+            font-family: 'Cedarville Cursive', cursive;
+            font-size: 16px;
+        }
+
+        #sw-navMain {
+            position: relative;
+            width: 800px !important;
+            height: auto;
+            min-height: 38px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+    </style>
+    <!-- END APPLICANTSTACK HEADER -->
+</head>
+
+<body>
+
+
+
+    <div id="sw-navUtilitiesBG">
+        <div id="sw-navUtilities">
+
+            <script>
+//	function submitSearch(){
+//		if(document.searchForm.search.value != "" && document.searchForm.search.value != "Search Our Site"){
+//			document.searchForm.submitBtn.disabled = true;
+//			document.searchForm.submit();
+//		}
+//	}
+            </script>
+
+            <div id="sw-navSearch">
+
+                <form name="searchForm" class="sw-form" action="search.cfm" method="post">
+                    <input type="text" value="Search Our Site" name="search" onFocus="this.value=''" />
+                    <button type="button" class="sw-button advance" name="submitBtn" onClick="submitSearch()"></button>
+                </form>
+            </div>
+
+            <a class="sw-button contact" href="contact.cfm?school=0">contact us</a>
+            <a class="sw-button sitemap" href="sitemap.cfm?school=0">site map</a>
+            <a class="sw-button distHome" href="index.cfm">district home</a>
+
+
+
+        </div>
+    </div>
+
+
+
+
+    <div id="sw-pageContainer">
+        <div id="sw-header">
+
+
+
+
+
+
+
+            <div id="sw-clientLogo">
+                <a href="index.cfm">
+                    <img id="sw-clientLogo" src="https://www2.applicantstack.com/userdata/buffaloschools/635719910045906695-BPS_1473835_ver1.0.png" width="910" height="118" border="0" />
+                </a>
+            </div>
+
+        </div>
+
+
+
+        <div id="sw-navContainer">
+            <div id="sw-navMain">
+
+                <div class="sw-dropDown">
+                    <a class="sw-mainButton" href="district.cfm">District</a><ul>
+                        <li><a href="district.cfm?subpage=68">About Us</a></li>
+                        <li><a href="district.cfm?subpage=73">Board of Education</a></li>
+                        <li><a href="district.cfm?subpage=71">Superintendent's Page</a></li>
+                        <li><a href="district.cfm?subpage=94">District Documents</a></li>
+                        <li><a href="district.cfm?subpage=66">District Performance</a></li>
+                        <li><a href="district.cfm?subpage=1475">Staff Resources</a></li>
+                    </ul>
+                </div>
+
+                <div class="sw-dropDown">
+                    <a class="sw-mainButton" href="schools.cfm">Our Schools</a><ul>
+                        <li><a href="GuidanceDept.cfm?subpage=83779">High School Ahead</a></li>
+                        <li><a href="StudentPlacementOffice.cfm?subpage=312">Admissions Process</a></li>
+                        <li><a href="schools.cfm?subpage=77242">Map</a></li>
+                        <li><a href="schools.cfm?subpage=81056">College Scholarships</a></li>
+                        <li><a href="schools.cfm?schooltype=Elementary Schools&amp;">Elementary Schools</a></li>
+                        <li><a href="schools.cfm?schooltype=High Schools&amp;">High Schools</a></li>
+                        <li><a href="schools.cfm?schooltype=Adult Education&amp;">Adult Education</a></li>
+                    </ul>
+                </div>
+
+                <div class="sw-dropDown">
+                    <a class="sw-mainButton" href="departments.cfm">Departments</a><ul>
+                        <li class="hasChildren">
+                            <a href="departments.cfm?depttype=Departments (A-F)&amp;">Departments (A-F)<span class="sw-arrow right"></span></a><ul>
+                                <li><a href="AdultEdDepartment.cfm">Adult Education Department</a></li>
+                                <li><a href="RacetotheTop.cfm">APPR</a></li>
+                                <li><a href="ArtEducation.cfm">Art Education Department</a></li>
+                                <li><a href="Athletics.cfm">Athletics</a></li>
+                                <li><a href="Attendance.cfm">Attendance</a></li>
+                                <li><a href="Career_Technical.cfm">Career &amp; Technical Education</a></li>
+                                <li><a href="StudentPlacementOffice.cfm">Central Registration Center</a></li>
+                                <li><a href="curriculum.cfm">Curriculum Framework</a></li>
+                                <li><a href="DocumentLibrary.cfm">Document Library</a></li>
+                                <li><a href="EducationalServices.cfm">Educational Services</a></li>
+                                <li><a href="e-Learning.cfm">e-Learning</a></li>
+                                <li><a href="electronicResources.cfm">Electronic Resources</a></li>
+                                <li><a href="ElementaryEd.cfm">Elementary Education</a></li>
+                                <li><a href="EnglishDept.cfm">English &amp; Reading</a></li>
+                                <li><a href="Finance.cfm">Finance</a></li>
+                                <li><a href="FoodServiceDept.cfm">Food Service Department</a></li>
+                            </ul>
+                        </li>
+                        <li class="hasChildren">
+                            <a href="departments.cfm?depttype=Departments (G-M)&amp;">Departments (G-M)<span class="sw-arrow right"></span></a><ul>
+                                <li><a href="Grants.cfm">Grants Department</a></li>
+                                <li><a href="GuidanceDept.cfm">Guidance/Counseling</a></li>
+                                <li><a href="HealthRelatedServices.cfm">Health Related Services</a></li>
+                                <li><a href="instructionaltech.cfm">Information Technology</a></li>
+                                <li><a href="LaborDept.cfm">Labor Relations</a></li>
+                                <li><a href="LegalCounsel.cfm">Legal Counsel</a></li>
+                                <li><a href="LibraryServices.cfm">Library Services</a></li>
+                                <li><a href="MathDept.cfm">Mathematics Department</a></li>
+                                <li><a href="ForeignLanguages.cfm">Multilingual Education</a></li>
+                                <li><a href="MusicDept.cfm">Music Department</a></li>
+                            </ul>
+                        </li>
+                        <li class="hasChildren">
+                            <a href="departments.cfm?depttype=Departments (N-R)&amp;">Departments (N-R)<span class="sw-arrow right"></span></a><ul>
+                                <li><a href="native_american.cfm">Native American Resource Program</a></li>
+                                <li><a href="family.cfm">Office of Parent Engagement</a></li>
+                                <li><a href="OSFprograms.cfm">Office of Federal &amp; State Programs</a></li>
+                                <li><a href="Payroll.cfm">Payroll</a></li>
+                                <li><a href="CommunityRelations.cfm">Public Relations</a></li>
+                                <li><a href="plantservices.cfm">Plant Services</a></li>
+                                <li><a href="PurchaseDept.cfm">Purchase Department</a></li>
+                                <li><a href="PEDept.cfm">Physical Education</a></li>
+                                <li><a href="ReadingDept.cfm">Reading &amp; English</a></li>
+                            </ul>
+                        </li>
+                        <li class="hasChildren">
+                            <a href="departments.cfm?depttype=Departments (S-Z)&amp;">Departments (S-Z)<span class="sw-arrow right"></span></a><ul>
+                                <li><a href="schoolperformance.cfm">School Leadership</a></li>
+                                <li><a href="ScienceDept.cfm">Science</a></li>
+                                <li><a href="Turnaround.cfm">School Innovation/Turnaround</a></li>
+                                <li><a href="SecurityDept.cfm">Security</a></li>
+                                <li><a href="sharedaccountability.cfm">Shared Accountability</a></li>
+                                <li><a href="SocialStudiesDept.cfm">Social Studies Department</a></li>
+                                <li><a href="SpecialEd.cfm">Special Education</a></li>
+                                <li><a href="staffdev.cfm">Staff Development</a></li>
+                                <li><a href="StudentServices.cfm">Student Support Services</a></li>
+                                <li><a href="Stem.cfm">STEM</a></li>
+                                <li><a href="teachercenter.cfm">Teacher Center</a></li>
+                                <li><a href="Transportation.cfm">Transportation</a></li>
+                                <li><a href="UniversalPK.cfm">Universal Prekindergarten</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sw-dropDown">
+                    <a class="sw-mainButton" href="TalentManagement.cfm">Talent Management</a><ul>
+                        <li><a href="TalentManagement.cfm?subpage=52221">Career Opportunities</a></li>
+                        <li><a href="TalentManagement.cfm?subpage=256">Benefits/Workers' Comp</a></li>
+                        <li><a href="TalentManagement.cfm?subpage=82769">Employment Services</a></li>
+                        <li><a href="TalentManagement.cfm?subpage=87434">Notice of Non-Discrimination</a></li>
+                        <li><a href="TalentManagement.cfm?subpage=1560">Salary &amp; Retirement Information</a></li>
+                        <li><a href="TalentManagement.cfm?subpage=94632">Talent Management Procedures Manual</a></li>
+                    </ul>
+                </div>
+
+                <div class="sw-dropDown">
+                    <a class="sw-mainButton" href="appr.cfm">APPR</a><ul>
+                        <li><a href="curriculum.cfm?subpage=83920">CCLS Sample Questions</a></li>
+                        <li><a target="_blank" href="curriculum.cfm?subpage=82773">Common Core Learning Standards</a></li>
+                        <li><a href="Turnaround.cfm">School Turnaround</a></li>
+                        <li><a href="appr.cfm?subpage=93833">Teacher and Principal Effectiveness</a></li>
+                        <li><a href="appr.cfm?subpage=83692">Administrator's Newsletter</a></li>
+                        <li><a href="appr.cfm?subpage=93645">Artifact Information</a></li>
+                        <li><a href="appr.cfm?subpage=90724">BPS Local Measure of Achievement (LMA)</a></li>
+                    </ul>
+                </div>
+
+                <div class="sw-dropDown">
+                    <a class="sw-mainButton" href="parents.cfm">Parents</a><ul>
+                        <li><a href="instructionaltech.cfm?subpage=87854">Parent Portal</a></li>
+                        <li><a href="family.cfm">Office of Parent Engagement</a></li>
+                        <li><a href="parents.cfm?subpage=89846">Videos for Parents</a></li>
+                    </ul>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
+
+        <div id="sw-contentContainer">
+            <div id="sw-contentContainer1"></div>
+            <div id="sw-contentContainer2"></div>
+
+
+            <div id="sw-contentContainerInner">
+                <div id="sw-contentContainerInner2">
+                    <div id="sw-contentContainerInner3">
+
+                        <div class="sw-column" id="sw-sideCol1">
+                            <div id="sw-sideCol1-1">
+                                <h2 id="sw-subHeader1" class="sw-subHeader">Talent Management</h2>
+
+                                <div id="sw-navLinks">
+
+
+
+                                    <ul>
+
+                                        <li><div class="bullet"></div><a href="TalentManagement.cfm?subpage=52221"><b>Career Opportunities</b></a></li>
+
+                                        <li><div class="bullet"></div><a href="TalentManagement.cfm?subpage=256">Benefits/Workers' Comp</a></li>
+
+                                        <li><div class="bullet"></div><a href="TalentManagement.cfm?subpage=82769">Employment Services</a></li>
+
+                                        <li><div class="bullet"></div><a href="TalentManagement.cfm?subpage=87434">Notice of Non-Discrimination</a></li>
+
+                                        <li><div class="bullet"></div><a href="TalentManagement.cfm?subpage=1560">Salary &amp; Retirement Information</a></li>
+
+                                        <li><div class="bullet"></div><a href="TalentManagement.cfm?subpage=94632">Talent Management Procedures Manual</a></li>
+
+
+
+                                    </ul>
+
+
+                                </div>
+
+
+                                <style>
+                                    .sw-translate {
+                                        width: 155px;
+                                        margin: 20px auto 0;
+                                        position: relative;
+                                        height: 45px;
+                                        background: #fff;
+                                        padding: 8px 8px 10px 8px;
+                                        border: 1px solid #e6e6e6;
+                                        -webkit-border-radius: 4px;
+                                        -moz-border-radius: 4px;
+                                        border-radius: 4px;
+                                    }
+
+                                        .sw-translate p {
+                                            font: bold 12px/15px Arial, Helvetica, sans-serif;
+                                            color: #333;
+                                            margin: 0 0 3px 0;
+                                            padding: 0;
+                                            text-align: left;
+                                        }
+
+                                            .sw-translate p img {
+                                                vertical-align: middle;
+                                            }
+
+                                    .goog-te-gadget-simple {
+                                        border: 1px solid #ccc;
+                                    }
+                                </style>
+
+                                <div class="sw-translate">
+                                    <p><img src="https://translate.googleapis.com/translate_static/img/mini_google.png" width="51" height="15" alt="Google" /> Translate</p>
+                                    <div id="google_translate_element"></div>
+                                </div>
+                                <script>
+	function googleTranslateElementInit() {
+	  new google.translate.TranslateElement({
+		pageLanguage: 'en',
+
+		layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+	  }, 'google_translate_element');
+	}
+                                </script>
+                                <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+                                <address>
+                                    <b>Buffalo Public Schools</b>
+                                    <br>712 City Hall
+                                    <br>Buffalo, New York 14202
+                                    <br>(716) 816-3500
+                                </address>
+
+
+
+                            </div>
+                        </div>
+
+                        <div id="sw-contentMain">
+
+
+
+                            <div id="sw-subHeader3">
+                                <div id="sw-subHeaderLeft"></div>
+                                <h2 id="sw-clientHeader" class="sw-subHeader">Career Opportunities</h2>
+                                <div id="sw-subHeaderRight"></div>
+                            </div>
+                            <!-- BEGIN APPLICANTSTACK CONTENT -->
+                            <div id="ascontainer">
+                                <div id="asbreadcrumbs" style="font-size: 12px important!;"></div>
+                                <div>
+                                    <script>
+	// Load jQuery if not defined or less than version 1.9.1 (required by bootstrap)
+	var jquery_is_loaded = true;
+	if (typeof jQuery === 'undefined') {
+		jquery_is_loaded = false;
+	}
+	else{
+		var jquery_version = jQuery.fn.jquery.split(' ')[0].split('.');
+		if ((jquery_version[0] < 2 && jquery_version[1] < 9) || (jquery_version[0] == 1 && jquery_version[1] == 9 && jquery_version[2] < 1)) {
+			jquery_is_loaded = false;
+		}
+	}
+	if(!jquery_is_loaded){
+		load_script('https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js');
+	}
+	
+	// Load bootstrap if not loaded
+	if (typeof $.fn.popover != 'function'){
+		load_script('/links/bootstrap/all/js/bootstrap.js');
+		load_link('/links/bootstrap/all/css/bootstrap.css');
+		load_link('/links/bootstrap/all/css/bootstrap-theme.css');
+	}
+	
+	function load_script(src){
+		var h = document.getElementsByTagName('head')[0];
+		var e = document.createElement('script');
+		e.src = src;
+		h.appendChild(e);
+	}
+	function load_link(href){
+		var h = document.getElementsByTagName('head')[0];
+		var e = document.createElement('link');
+		e.rel = 'stylesheet';
+		e.type = 'text/css';
+		e.href = href;
+		h.appendChild(e);
+	}
+</script><div id="asmyaccount" style="float:right; text-align:right; white-space: nowrap"><a href="https://buffaloschools.applicantstack.com/x/myaccount">My Account</a></div><script type="application/ld+json">
+{"@context":"http:\/\/schema.org\/","@type":"JobPosting","datePosted":"2021-09-24T10:30:17-04:00","description":"<p align=\"center\" style=\"text-align:center;\"><strong><span style=\"font-size:9pt;\"><span style=\"background:#FFFFFF;\"><span style=\"line-height:107%;\"><span><span style=\"color:#333333;\">BOARD OF EDUCATION<\/span><\/span><\/span><\/span><\/span><\/strong><br \/>\n<b><span style=\"font-size:9pt;\"><span style=\"background:#FFFFFF;\"><span style=\"line-height:107%;\"><span><span style=\"color:#333333;\"><strong><span>DEPARTMENT OF HUMAN RESOURCES<\/span><\/strong><br \/>\n<strong><span>BUFFALO, NEW YORK 14202<\/span><\/strong><\/span><\/span><\/span><\/span><\/span><\/b><\/p>\n<br \/>\n<span style=\"font-size:12px;\">The Interim Superintendent of Schools,&nbsp;Dr. Tonja Williams,&nbsp;is interested in receiving applications from qualified candidates for:<br \/>\n<br \/>\n<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"font-size:16px;\">Elementary Education Teacher<\/span><br \/>\n<br \/>\n<u>HOW TO APPLY<\/u>:&nbsp; <\/strong><br \/>\nClick the \"<strong>APPLY<\/strong>\" button at the bottom of this page to&nbsp;start your application.&nbsp; Once the application is completed, click the <strong>\u201cSubmit\u201d<\/strong> button.&nbsp; Your application will be kept on file for one year.&nbsp;<\/span><br \/>\n<br \/>\n<span style=\"font-size:12px;\"><span style=\"color:rgb(255,0,0);\"><strong>Applications successfully received will generate a confirmation email to the account listed on the application. (Be sure to check your junk and spam mail.)&nbsp; If you do not receive a confirmation email, we cannot guarantee that your application was received.&nbsp; You must submit an application until you receive a confirmation email.<\/strong><\/span><\/span><br \/>\n<br \/>\n<strong><u>MINIMUM QUALIFICATIONS<\/u>: <\/strong><br \/>\nCandidates must be New York State or Buffalo certified in the tenure area for which they are applying to teach.&nbsp; <strong><font size=\"2\">It is required that candidates must attach a PDF or a screen shot of their certifications. <\/font><\/strong>&nbsp;Preference will be given to applicants with current City of Buffalo residency.<br \/>\n<br \/>\n<strong><u>JOB SUMMARY:<\/u><\/strong><br \/>\nPosition requires the planning, organization, and implementation of the appropriate instructional program to address the learning needs of the students; to guide and encourage students to develop and fulfill their potential in both curricular and extracurricular activities.<br \/>\n<br \/>\n<strong><u>ESSENTIAL DUTIES:<\/u><\/strong>\n\n<ul>\n\t<li>Plan, prepare and deliver instructional activities that facilitate active learning experiences.<\/li>\n\t<li>Develop lesson plans.<\/li>\n\t<li>Establish and communicate clear objectives for all learning activities.<\/li>\n\t<li>Prepare classroom for class activities.<\/li>\n\t<li>Provide a variety of learning materials and resources for use in educational activities.<\/li>\n\t<li>Identify and utilize different instructional resources and methods to support the learning needs of students at varying levels of progress.<\/li>\n\t<li>Instruct and monitor students in the use of learning materials and equipment.<\/li>\n\t<li>Provide for the care and protection of school property.<\/li>\n\t<li>Use relevant technology to support instruction.<\/li>\n\t<li>Observe and evaluate student performance and development.<\/li>\n\t<li>Assign and grade class work, homework, tests, and assignments as appropriate.<\/li>\n\t<li>Provide appropriate feedback on student work.<\/li>\n\t<li>Monitor and encourage individual student progress.<\/li>\n\t<li>Provide guidance to students which will promote educational development.<\/li>\n\t<li>Maintain accurate and complete records of student progress and development.<\/li>\n\t<li>Update records accurately and completely as required by laws and district policies.<\/li>\n\t<li>Prepare required reports on students and activities.<\/li>\n\t<li>Manage student behavior and maintain discipline by establishing classroom rules and procedures and enforcing classroom, school, and district rules and procedures.<\/li>\n\t<li>Participate in department, school, and district meetings and professional development activities as appropriate.<\/li>\n\t<li>Stay current with most recent developments in appropriate subject area as initiated by the school or district.<\/li>\n\t<li>Cooperate with and participate in the planning, implementation, and evaluation of the total school program.<\/li>\n\t<li>Foster and maintain effective communication with parents and\/or guardians.<\/li>\n\t<li>Perform other tasks and responsibilities as assigned by the Principal or other appropriate administrator<\/li>\n<\/ul>\n<span style=\"font-size:12px;\"> <span style=\"background-color:rgb(255,255,0);\">This recruitment bulletin in no way states or implies that these are the only duties to be performed by this employee. The employee will be required to follow any other instructions and to perform any other related duties as assigned by the appropriate administrator or supervisor. Buffalo Public Schools reserves the right to update, revise or change this recruitment bulletin and related duties at any time without prior notice.<\/span><\/span><br \/>\n<br \/>\n<span style=\"font-size:12px;\"><strong><u>APPOINTMENT<\/u><\/strong><strong>:<\/strong><br \/>\nAppointment will be made by the Board of Education upon the recommendation of the Superintendent following assessment of training, experience, certifications, credentials and evaluation of service.&nbsp; Personal interviews shall be scheduled where appropriate.<br \/>\n<br \/>\n<strong><u>SALARY<\/u><\/strong>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Teacher's salary schedule.<br \/>\n<br \/>\n<strong><u>FUND #<\/u>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<\/strong>Pending Funding<br \/>\n<br \/>\n<strong><u>FINAL DATE <\/u><\/strong><br \/>\n<strong><u>FOR FILING<\/u>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TBD<\/strong><\/span>\n\n<div style=\"text-align:right;\"><br \/>\n<strong><font size=\"2\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;DR. TONJA WILLIAMS<\/font><\/strong><strong><font size=\"2\">,<\/font><br \/>\n<font size=\"2\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;INTERIM SUPERINTENDENT OF SCHOOLS<\/font><\/strong><br \/>\n<br \/>\n<br \/>\n&nbsp;<\/div>\n<br \/>\n<span style=\"font-size:12px;\">&nbsp;<\/span>","hiringOrganization":{"@type":"Organization","name":"Buffalo Public Schools","logo":"http:\/\/public.applicantstack.com"},"identifier":{"@type":"PropertyValue","name":"Buffalo Public Schools","value":"a2gaqkzwue2e"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressCountry":"us","addressRegion":"NY","addressLocality":"buffalo"}},"title":"Elementary Education Teacher"}
+</script><div id="asbreadcrumbs"><a href="https://buffaloschools.applicantstack.com/x/openings">Openings</a> &gt;&gt; Elementary Education Teacher</div><div id="contenttitle" style="clear:both">Elementary Education Teacher</div><div class="sectionhead">Summary</div><table class="formtable"><tr><th>Title:</th><td class="noinput">Elementary Education Teacher</td></tr><tr><th>ID:</th><td class="noinput">6054</td></tr><tr><th>Department:</th><td class="noinput">Other</td></tr><tr><th>Location:</th><td class="noinput">School Location</td></tr><tr><th>Division:</th><td class="noinput">Instructional</td></tr></table><div class="sectionhead description_head">Description</div><div class="listing_description show_listing_description"><p align="center" style="text-align:center"><strong><span style="font-size:9.0pt"><span style="background:white"><span style="line-height:107%"><span helvetica="" style="font-family:"><span style="color:#333333">BOARD OF EDUCATION</span></span></span></span></span></strong><br style="box-sizing:border-box" />
+<b><span style="font-size:9.0pt"><span style="background:white"><span style="line-height:107%"><span helvetica="" style="font-family:"><span style="color:#333333"><strong><span helvetica="" style="font-family:">DEPARTMENT OF HUMAN RESOURCES</span></strong><br style="box-sizing:border-box" />
+<strong><span helvetica="" style="font-family:">BUFFALO, NEW YORK 14202</span></strong></span></span></span></span></span></b></p>
+<br />
+<span style="font-size: 12px;">The Interim Superintendent of Schools,&nbsp;Dr. Tonja Williams,&nbsp;is interested in receiving applications from qualified candidates for:<br />
+<br />
+<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size: 16px;">Elementary Education Teacher</span><br />
+<br />
+<u>HOW TO APPLY</u>:&nbsp; </strong><br />
+Click the &quot;<strong>APPLY</strong>&quot; button at the bottom of this page to&nbsp;start your application.&nbsp; Once the application is completed, click the <strong>&ldquo;Submit&rdquo;</strong> button.&nbsp; Your application will be kept on file for one year.&nbsp;</span><br />
+<br />
+<span style="font-size: 12px;"><span style="color: rgb(255, 0, 0);"><strong>Applications successfully received will generate a confirmation email to the account listed on the application. (Be sure to check your junk and spam mail.)&nbsp; If you do not receive a confirmation email, we cannot guarantee that your application was received.&nbsp; You must submit an application until you receive a confirmation email.</strong></span></span><br />
+<br />
+<strong><u>MINIMUM QUALIFICATIONS</u>: </strong><br />
+Candidates must be New York State or Buffalo certified in the tenure area for which they are applying to teach.&nbsp; <strong><font size="2">It is required that candidates must attach a PDF or a screen shot of their certifications. </font></strong>&nbsp;Preference will be given to applicants with current City of Buffalo residency.<br />
+<br />
+<strong><u>JOB SUMMARY:</u></strong><br />
+Position requires the planning, organization, and implementation of the appropriate instructional program to address the learning needs of the students; to guide and encourage students to develop and fulfill their potential in both curricular and extracurricular activities.<br />
+<br />
+<strong><u>ESSENTIAL DUTIES:</u></strong>
+
+<ul>
+	<li>Plan, prepare and deliver instructional activities that facilitate active learning experiences.</li>
+	<li>Develop lesson plans.</li>
+	<li>Establish and communicate clear objectives for all learning activities.</li>
+	<li>Prepare classroom for class activities.</li>
+	<li>Provide a variety of learning materials and resources for use in educational activities.</li>
+	<li>Identify and utilize different instructional resources and methods to support the learning needs of students at varying levels of progress.</li>
+	<li>Instruct and monitor students in the use of learning materials and equipment.</li>
+	<li>Provide for the care and protection of school property.</li>
+	<li>Use relevant technology to support instruction.</li>
+	<li>Observe and evaluate student performance and development.</li>
+	<li>Assign and grade class work, homework, tests, and assignments as appropriate.</li>
+	<li>Provide appropriate feedback on student work.</li>
+	<li>Monitor and encourage individual student progress.</li>
+	<li>Provide guidance to students which will promote educational development.</li>
+	<li>Maintain accurate and complete records of student progress and development.</li>
+	<li>Update records accurately and completely as required by laws and district policies.</li>
+	<li>Prepare required reports on students and activities.</li>
+	<li>Manage student behavior and maintain discipline by establishing classroom rules and procedures and enforcing classroom, school, and district rules and procedures.</li>
+	<li>Participate in department, school, and district meetings and professional development activities as appropriate.</li>
+	<li>Stay current with most recent developments in appropriate subject area as initiated by the school or district.</li>
+	<li>Cooperate with and participate in the planning, implementation, and evaluation of the total school program.</li>
+	<li>Foster and maintain effective communication with parents and/or guardians.</li>
+	<li>Perform other tasks and responsibilities as assigned by the Principal or other appropriate administrator</li>
+</ul>
+<span style="font-size: 12px;"> <span style="background-color: rgb(255, 255, 0);">This recruitment bulletin in no way states or implies that these are the only duties to be performed by this employee. The employee will be required to follow any other instructions and to perform any other related duties as assigned by the appropriate administrator or supervisor. Buffalo Public Schools reserves the right to update, revise or change this recruitment bulletin and related duties at any time without prior notice.</span></span><br />
+<br />
+<span style="font-size: 12px;"><strong><u>APPOINTMENT</u></strong><strong>:</strong><br />
+Appointment will be made by the Board of Education upon the recommendation of the Superintendent following assessment of training, experience, certifications, credentials and evaluation of service.&nbsp; Personal interviews shall be scheduled where appropriate.<br />
+<br />
+<strong><u>SALARY</u></strong>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Teacher&#39;s salary schedule.<br />
+<br />
+<strong><u>FUND #</u>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>Pending Funding<br />
+<br />
+<strong><u>FINAL DATE </u></strong><br />
+<strong><u>FOR FILING</u>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TBD</strong></span>
+
+<div style="text-align: right;"><br />
+<strong><font size="2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;DR. TONJA WILLIAMS</font></strong><strong><font size="2">,</font><br />
+<font size="2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;INTERIM SUPERINTENDENT OF SCHOOLS</font></strong><br />
+<br />
+<br />
+&nbsp;</div>
+<br />
+<span style="font-size: 12px;">&nbsp;</span></div><div style="text-align:center; margin-top:20px"><div class="buttons"><a href="https://buffaloschools.applicantstack.com/x/apply/a2gaqkzwue2e" class="equal-width-button">Apply Now</a><div class='refer-friend-spacer'>&nbsp;</div><div style='margin-top:10px'><a href="https://buffaloschools.applicantstack.com/x/refer/a2gaqkzwue2e" class="equal-width-button">Refer to a Friend</a></div></div></div>
+                                </div>
+                            </div>
+                            <!-- END APPLICANTSTACK CONTENT -->
+
+
+                            <HR width="100%" SIZE=2>    <P>
+                            <P align=center>&nbsp; <P>
+                                <!-- **!! -->
+
+
+
+
+
+                                <br />
+                                </font>
+                            <p></p> </font>
+
+
+
+
+
+
+
+
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+
+                        </div>
+
+                    </div>
+                    <div class="sw-clearfix"></div>
+
+                </div>
+            </div>
+        </div>
+        <div id="sw-contentContainer3"></div>
+        <div id="sw-contentContainer4"></div>
+    </div>
+    <div id="sw-footer"></div>
+    </div>
+    <!-- APPLICANTSTACK FOOTER -->
+    <div id="asfooter">Powered by ApplicantStack&trade; <a href="https://applicantstack.com/hiring-automation-software/" target="_blank">Hiring Software</a></div>
+</body>
+</html>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19758796-6']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
