@@ -6,7 +6,7 @@ services:
       - 27017:27017
     environment:
       - MONGO_INITDB_ROOT_USERNAME=mongoadmin
-      - MONGO_INITDB_ROOT_PASSWORD=my_password
+      - MONGO_INITDB_ROOT_PASSWORD=my_new_password
     volumes:
       - mongo-data:/data/db
   my-server:
