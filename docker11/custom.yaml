@@ -8,7 +8,7 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=mongoadmin
       - MONGO_INITDB_ROOT_PASSWORD=my_password
     volumes:
-      - my-mongo-data:/data/db
+      - mongo-data:/data/db
   my-server:
     image: 820251807345.dkr.ecr.us-east-1.amazonaws.com/my-server
     ports:
@@ -18,5 +18,5 @@ services:
       - ME_CONFIG_MONGODB_ADMINPASSWORD=my_password
       - ME_CONFIG_MONGODB_SERVER=mongodb
 volumes:
-  my-mongo-data:
+  mongo-data:
     driver: local
