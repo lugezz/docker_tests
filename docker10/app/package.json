@@ -7,6 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/nanuchi/techworld-js-docker-demo-app.git"
+  },
   "author": "Nana Janashia",
   "license": "ISC",
   "dependencies": {
