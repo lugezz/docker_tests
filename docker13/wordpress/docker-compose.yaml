@@ -1,0 +1,39 @@
+version: 'v2'
+services:
+  dbwordpress:
+    container_name: wordpressdb
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=testwordpress
+      - MYSQL_USER=artime
+      - MYSQL_PASSWORD=test
+    volumes:
+      - wordpress-data:/my/own/datadir:/var/lib/mysql
+    networks:
+      - net_wordpress
+
+  webwordpress:
+    container_name: wordpressweb
+    image: wordpress
+    ports:
+      - 8090:80
+    environment:
+      WORDPRESS_DB_HOST: dbwordpress
+      WORDPRESS_DB_USER: "artime"
+      WORDPRESS_DB_PASSWORD: "test"
+      WORDPRESS_DB_NAME: "testwordpress"
+
+    volumes:
+      - wordpress-web:/var/www/html
+    networks:
+      - net_wordpress
+    depends_on:
+      - dbwordpress
+
+volumes:
+  wordpress-data:
+  wordpress-web:
+
+networks:
+  net_wordpress:
